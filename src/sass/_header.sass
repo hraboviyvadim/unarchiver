@@ -1,15 +1,65 @@
 .header
-  padding: 10px 0
   margin-bottom: 50px
 .nav
   text-align: center
 .menu
   font-size: 0
   .menu-item
+    position: relative
     display: inline-block
     vertical-align: middle
+    padding: 10px 0
     margin: 0 20px
+    &:hover
+      .dropdown
+        opacity: 1
+        visibility: visible
   .menu-link
     font-size: 14px
     line-height: 2
     color: $dark-blue
+    transition: color 300ms
+    &:hover
+      text-decoration: none
+      color: $blue
+.dropdown
+  position: absolute
+  top: 48px
+  left: 50%
+  width: 280px
+  transform: translateX(-50%)
+  padding: 40px 30px 20px
+  border-radius: 12px
+  background: rgba(#000624, .95)
+  opacity: 0
+  visibility: hidden
+  z-index: 99
+  &:before
+    content: ""
+    position: absolute
+    top: -5px
+    right: 105px
+    +arr(10, 5, rgba(#000624, .95), t)
+  .dropdown-menu
+    font-size: 0
+  .dropdown-item
+    display: inline-block
+    vertical-align: top
+    width: 50%
+    margin-bottom: 20px
+    text-align: center
+  .dropdown-link
+    display: block
+    color: #fff
+    transition: color 300ms
+    &:hover
+      color: $blue
+      text-decoration: none
+  .dropdown-icon
+    height: 64px
+    margin-bottom: 10px
+    img
+      max-width: 64px
+  .dropdown-title
+    font-size: 14px
+
