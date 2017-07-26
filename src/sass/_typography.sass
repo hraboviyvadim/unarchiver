@@ -1,0 +1,47 @@
+// default link styles
+a
+  text-decoration: none
+  color: $blue
+  &:hover
+    text-decoration: underline
+
+// titles
+.h1, .h2, .h3, .h4, .h5, .h6
+  color: $dark-blue
+  font-weight: $medium
+  text-align: center
+.h1
+  margin-bottom: 5px
+  font-size: 52px
+  +r(768)
+    font-size: 42px
+  +r(480)
+    font-size: 36px
+.h2
+  font-size: 43px
+  +r(768)
+    font-size: 36px
+  +r(480)
+    font-size: 32px
+.h3
+  font-size: 35px
+  +r(768)
+    font-size: 28px
+  +r(480)
+    font-size: 24px
+.h4
+  font-size: 23px
+  +r(768)
+    font-size: 20px
+  +r(480)
+    font-size: 18px
+
+.subtitle
+  text-align: center
+  color: $dark
+  font-size: 35px
+  font-weight: $light
+  +r(768)
+    font-size: 30px
+  +r(480)
+    font-size: 26px

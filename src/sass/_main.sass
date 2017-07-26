@@ -1,1 +1,81 @@
 // styles
+.topper
+  margin-bottom: 82px
+
+.product
+  max-width: 310px
+  margin: 0 auto 70px
+  padding: 0 10px
+  font-size: 0
+  +r(768)
+    max-width: 100%
+  .product-img
+    min-height: 126px
+    margin-bottom: 28px
+    text-align: center
+    img
+      max-width: 120px
+    +r(768)
+      display: inline-block
+      vertical-align: middle
+      width: 45%
+      img
+        width: 200px
+        max-width: 100%
+    +r(600)
+      display: block
+      width: 100%
+  .product-info
+    text-align: center
+    +r(768)
+      display: inline-block
+      vertical-align: middle
+      width: 55%
+      padding-left: 5%
+      text-align: left
+    +r(600)
+      display: block
+      width: 100%
+      padding-left: 0
+      text-align: center
+  .product-title
+    margin-bottom: 11px
+    +r(768)
+      text-align: left
+    +r(600)
+      text-align: center
+  .product-descr
+    margin-bottom: 35px
+    font-size: $default
+    +r(768)
+      font-size: $default_mobile
+  &.-big
+    max-width: 100%
+    .product-img, .product-info
+      display: inline-block
+      vertical-align: middle
+      width: 50%
+      +r(600)
+        display: block
+        width: 100%
+    .product-img
+      img
+        max-width: 365px
+      +r(1024)
+        width: 45%
+      +r(768)
+        img
+          max-width: 100%
+    .product-info
+      text-align: left
+      +r(1024)
+        width: 55%
+        padding-left: 5%
+      +r(600)
+        text-align: center
+        padding-left: 0
+    .product-title
+      text-align: left
+      margin-bottom: 23px
+      +r(600)
+        text-align: center

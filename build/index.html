@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Template</title>
+    <title>Unarchiver</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="theme-color" content="#fff">
@@ -20,32 +20,138 @@
     <div class="out">
       <!-- header -->
       <header class="header">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci amet aperiam asperiores eaque est fuga iure. Alias aspernatur beatae dolor est laudantium libero neque, nisi quae, rerum tenetur vitae.</p>
+        <div class="wrapper">
+          <nav class="nav">
+            <ul class="menu">
+              <li class="menu-item">
+                <a class="menu-link" href="#">Home</a>
+              </li>
+              <li class="menu-item">
+                <a class="menu-link" href="#">Products
+                  <i class="arr-down"></i>
+                </a>
+                <div class="dropdown"></div>
+              </li>
+              <li class="menu-item">
+                <a class="menu-link" href="#">Support</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </header>
       <!-- page content -->
-      <svg class="icon icon-close">
-        <use xlink:href="img/sprite.svg#icon-close"></use>
-      </svg>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium assumenda, at culpa cum deserunt ea expedita fuga illo incidunt maxime praesentium quaerat quod similique sunt voluptates voluptatum. Culpa, sint.</p>
-      sdsd dfdgfgryjh
-
-      <div class="item-0">sdsd0</div>
-      <div class="item-1">sdsd1</div>
-      <div class="item-2">sdsd2</div>
-      <div class="item-3">sdsd3</div>
-      <div class="item-4">sdsd4</div>
+      <section class="topper">
+        <div class="wrapper">
+          <h1 class="h1">Mac Archive Utility Pack</h1>
+          <h4 class="subtitle">Best software for archive files on macOS and iOS</h4>
+        </div>
+      </section>
+      <section class="apps">
+        <div class="wrapper">
+          <div class="row">
+            <div class="col-12">
+              <div class="product -big">
+                <div class="product-img">
+                  <img src="img/unarchive.png" srcset="img/unarchive@2x.png 2x" alt="">
+                </div>
+                <div class="product-info">
+                  <h2 class="product-title h2">The Unarchiver</h2>
+                  <div class="product-descr">
+                    <p>The Unarchiver is the only app you need to unrar files on Mac. It’s times more powerful than the native macOS utility and supports infinitely more archive formats.
+                      <a href="#">Read more</a>...</p>
+                  </div>
+                  <button class="btn">Download for Free</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4 mob-col-12">
+              <div class="product">
+                <div class="product-img">
+                  <img src="img/archive-browser.png" srcset="img/archive-browser@2x.png 2x" alt="">
+                </div>
+                <div class="product-info">
+                  <div class="product-title h4">The Archive Browser</div>
+                  <div class="product-descr">
+                    <p>A simple and efficient archive viewer. With this archive utility, Mac has a tool to open archive contents and Preview the files without extracting them. You can also extract separate files when needed.</p>
+                  </div>
+                  <a href="#" class="btn -blue">view app</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-4 mob-col-12">
+              <div class="product">
+                <div class="product-img">
+                  <img src="img/archives.png" srcset="img/archives@2x.png 2x" alt="">
+                </div>
+                <div class="product-info">
+                  <div class="product-title h4">Archives</div>
+                  <div class="product-descr">
+                    <p>With Archives, you can view archive contents on any iOS device, without your desktop computer. Unzip files on iPhone or iPad, see what’s inside, save or send them directly from the app.</p>
+                  </div>
+                  <a href="#" class="btn -blue">view app</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-4 mob-col-12">
+              <div class="product">
+                <div class="product-img">
+                  <img src="img/xee.png" srcset="img/xee@2x.png 2x" alt="">
+                </div>
+                <div class="product-info">
+                  <div class="product-title h4">Xee
+                    <sup>3</sup>
+                  </div>
+                  <div class="product-descr">
+                    <p>Xee image viewer for Mac lets you easily work with images of all formats. It allows for a better file management, quick access, and a comfortable view of all your galleries.</p>
+                  </div>
+                  <a href="#" class="btn -blue">view app</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
     <!-- END content -->
 
     <!-- footer -->
     <footer class="footer">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate eveniet minus provident quis! Ad, aut consectetur earum est, ex laudantium maxime molestiae nostrum officiis pariatur perspiciatis sed, ut vel! Voluptatem.</p>
+      <div class="wrapper">
+        <p>Copyright © 2017 MacPaw Inc.</p>
+      </div>
     </footer>
     <!-- BEGIN scripts -->
-    <script type="text/javascript" src="js/common.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
     <!-- END scripts -->
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w, d, s, l, i)
+      {
+        w[l] = w[l] || [];
+        w[l].push(
+        {
+          'gtm.start': new Date().getTime(),
+          event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-N44QVXM');
+
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N44QVXM" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
   </body>
 </html>

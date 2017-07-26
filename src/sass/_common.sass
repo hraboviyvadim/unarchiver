@@ -1,1 +1,53 @@
+// colors
+$dark: #505050
+$dark-blue: #42465B
+$green: #28CD44
+$blue: #288BFF
+$text: #727272
+
+// font params
+$medium: 500
+$light: 300
+$default: 18px
+$default_mobile: 16px
 // common styles here
+body
+  font-family: "Helvetica Neue", Arial, sans-serif
+  font-size: $default
+  line-height: 1.35
+  color: $text
+  +r(768)
+    font-size: $default_mobile
+
+.wrapper
+  max-width: 1105px
+  margin: 0 auto
+  +r(1125)
+    padding: 0 10px
+.arr-down
+  display: inline-block
+  vertical-align: middle
+  +arr(8, 4, $dark-blue, b)
+
+// buttons
+.btn
+  height: 46px
+  padding: 0 33px
+  text-transform: uppercase
+  color: #fff
+  font-size: 14px
+  letter-spacing: 1px
+  font-weight: bold
+  border-radius: 5px
+  background: $green
+  transition: background 300ms
+  &:hover
+    background: darken($green, 5%)
+  &.-blue
+    background: $blue
+    &:hover
+      background: darken($blue, 5%)
+a.btn
+  display: inline-block
+  line-height: 46px
+  text-decoration: none

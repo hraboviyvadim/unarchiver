@@ -1,0 +1,9 @@
+.row
+  +clr
+@for $i from 1 through 12
+  .col-#{$i}
+    float: left
+    width: (100% / 12) * $i
+  .mob-col-#{$i}
+    +r(768)
+      width: (100% / 12) * $i
