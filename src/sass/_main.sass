@@ -1,14 +1,35 @@
 // styles
 .topper
   margin-bottom: 82px
-
-.product
-  max-width: 310px
-  margin: 0 auto 70px
-  padding: 0 10px
-  font-size: 0
+.apps-row
+  display: flex
+  align-items: stretch
+  justify-content: space-between
   +r(768)
-    max-width: 100%
+    flex-direction: column
+.product
+  position: relative
+  width: 31%
+  padding: 30px 30px 100px
+  font-size: 0
+  border-radius: 8px
+  background: #fff
+  +r(1024)
+    padding: 20px 20px 90px
+  +r(768)
+    width: 100%
+    padding: 20px
+    margin-bottom: 30px
+    .btn
+      position: relative
+      bottom: auto
+      left: auto
+      transform: none
+  .btn
+    position: absolute
+    bottom: 30px
+    left: 50%
+    transform: translateX(-50%)
   .product-img
     min-height: 126px
     margin-bottom: 28px
@@ -45,12 +66,21 @@
     +r(600)
       text-align: center
   .product-descr
-    margin-bottom: 35px
+    margin-bottom: 20px
     font-size: $default
     +r(768)
       font-size: $default_mobile
   &.-big
-    max-width: 100%
+    padding: 40px
+    width: 100%
+    margin-bottom: 30px
+    .btn
+      position: relative
+      left: auto
+      bottom: auto
+      transform: none
+    +r(1024)
+      padding: 30px
     .product-img, .product-info
       display: inline-block
       vertical-align: middle
