@@ -35,6 +35,7 @@
     margin-bottom: 28px
     text-align: center
     img
+      transition: transform 300ms
       max-width: 120px
     +r(768)
       display: inline-block
@@ -48,6 +49,7 @@
       width: 100%
   .product-info
     text-align: center
+    font-size: 18px
     +r(768)
       display: inline-block
       vertical-align: middle
@@ -61,15 +63,32 @@
       text-align: center
   .product-title
     margin-bottom: 11px
+    transition: color 300ms
     +r(768)
       text-align: left
     +r(600)
       text-align: center
+  .product-subtitle
+    margin-bottom: 20px
+    font-size: 27px
+    font-weight: $light
+    color: $dark
+  .product-hint
+    padding-top: 10px
   .product-descr
     margin-bottom: 20px
     font-size: $default
     +r(768)
       font-size: $default_mobile
+  &.-prod
+    background: none
+    +r(768)
+      .product-img, .product-info
+        display: block
+        width: 100%
+        text-align: center
+      .product-title
+        text-align: center
   &.-big
     padding: 40px
     width: 100%
@@ -90,11 +109,13 @@
         width: 100%
     .product-img
       img
-        max-width: 365px
+        width: 365px
+        max-width: 100%
       +r(1024)
         width: 45%
       +r(768)
         img
+          width: 200px
           max-width: 100%
     .product-info
       text-align: left
@@ -109,3 +130,14 @@
       margin-bottom: 23px
       +r(600)
         text-align: center
+  &.-small
+    padding: 30px
+a.product
+  color: $text
+  &:hover
+    text-decoration: none
+    .product-title
+      color: $blue
+    .product-img
+      img
+        transform: scale(1.05)

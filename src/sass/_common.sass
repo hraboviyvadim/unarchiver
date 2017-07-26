@@ -1,8 +1,15 @@
 // colors
 $dark: #505050
-$dark-blue: #42465B
+$text-blue: #42465B
 $green: #28CD44
+$light-green: #48DF62
+$dark-green: #13BE30
 $blue: #288BFF
+$light-blue: #4C9FFF
+$dark-blue: #1274E8
+$gray: rgba(#000C2D, 40%)
+$light-gray: rgba(#000C2D, 30%)
+$dark-gray: rgba(#000C2D, 60%)
 $text: #727272
 
 // font params
@@ -17,6 +24,7 @@ body
   line-height: 1.35
   color: $text
   background: #F4F5F8
+  +font-smoothing
   +r(768)
     font-size: $default_mobile
 
@@ -34,20 +42,29 @@ body
 .btn
   height: 46px
   padding: 0 33px
-  text-transform: uppercase
   color: #fff
-  font-size: 14px
-  letter-spacing: 1px
+  font-size: 18px
+  +font-smoothing
   font-weight: bold
   border-radius: 5px
   background: $green
   transition: background 300ms
   &:hover
-    background: darken($green, 5%)
+    background: $light-green
+  &:active
+    background: $dark-green
   &.-blue
     background: $blue
     &:hover
-      background: darken($blue, 5%)
+      background: $light-blue
+    &:active
+      background: $dark-blue
+  &.-gray
+    background: $gray
+    &:hover
+      background: $light-gray
+    &:active
+      background: $dark-gray
 a.btn
   display: inline-block
   line-height: 46px

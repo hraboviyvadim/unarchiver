@@ -1,0 +1,162 @@
+.benefits
+  margin-bottom: 80px
+.benefit
+  padding: 0 10px
+  text-align: center
+  .benefit-icon
+    height: 40px
+    margin-bottom: 17px
+    font-size: 30px
+    
+.white
+  background: #fff
+.slider
+  position: relative
+  padding: 120px 0 40px
+  +r(768)
+    padding: 50px 0
+  .slider-prev, .slider-next
+    position: absolute
+    top: 50%
+    background: none
+    font-size: 33px
+    color: #B0B0B0
+    +r(600)
+      display: none
+  .slider-prev
+    left: 0
+  .slider-next
+    right: 0
+.formats
+  position: relative
+  max-height: 600px
+  padding-top: 100px
+  margin-bottom: 120px
+  overflow: hidden
+  text-align: center
+  transition: height 3000ms
+  +r(768)
+    display: none
+  &.is-open
+    max-height: inherit
+    .formats-footer
+      display: none
+.formats-footer
+  display: flex
+  align-items: flex-end
+  justify-content: center
+  position: absolute
+  bottom: 0
+  left: 0
+  right: 0
+  height: 200px
+  pointer-events: none
+  text-align: center
+  background: linear-gradient(to top, #fff 0, #fff 70px, rgba(#fff, 0) 100%)
+  .btn
+    pointer-events: initial
+.formats-wrap
+  display: flex
+  justify-content: space-between
+  padding-top: 40px
+.formats-col
+  width: 28%
+  .h4
+    margin-bottom: 25px
+.formats-text
+  text-align: left
+  font-size: 14px
+.formats-table
+  width: 100%
+  margin-bottom: 10px
+  border-collapse: collapse
+  font-size: 14px
+  color: $text
+  strong
+    font-weight: bold
+    color: $text-blue
+  td
+    height: 50px
+    vertical-align: middle
+    border-bottom: 1px solid #ccc
+    text-align: left
+    position: relative
+    &:last-child
+      text-align: right
+.hint
+  position: absolute
+  top: 15px
+  right: -30px
+  text-align: left
+  &.is-open
+    .hint-body
+      opacity: 1
+      visibility: visible
+  .hint-btn
+    font-size: 20px
+    color: $blue
+    background: none
+  .hint-body
+    position: absolute
+    bottom: -15px
+    right: -30px
+    width: 290px
+    border-radius: 12px
+    padding: 30px
+    background: rgba(#000624, .95)
+    font-size: 14px
+    color: #fff
+    opacity: 0
+    visibility: hidden
+    &:before
+      content: ""
+      position: absolute
+      bottom: -5px
+      right: 35px
+      +arr(10, 5, rgba(#000624, .95), b)
+    strong
+      display: inline-block
+      margin-bottom: 5px
+      color: #fff
+      font-weight: bold
+
+.howto
+  padding-bottom: 60px
+  .h2
+    margin-bottom: 25px
+  .howto-footer
+    max-width: 720px
+    margin: 0 auto
+    text-align: center
+    p
+      margin-bottom: 36px
+    .btn + p
+      padding-top: 10px
+.steps
+  display: flex
+  justify-content: space-between
+  margin: 0 -10px 60px
+  +r(768)
+    display: block
+    margin: 0 0 60px
+.step
+  width: 100%
+  min-height: 250px
+  padding: 24px
+  border-radius: 8px
+  margin: 0 10px
+  background: #EDF1FB
+  font-size: 14px
+  .h2
+    text-align: left
+  +r(768)
+    margin: 0 0 20px
+    min-height: inherit
+
+.more
+  padding: 60px 0 40px
+  .h2
+    margin-bottom: 25px
+
+
+

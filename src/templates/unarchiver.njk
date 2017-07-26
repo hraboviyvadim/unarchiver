@@ -1,5 +1,66 @@
 ---
 title: Unarchiver
+popular:
+  - item:
+    format: Zip
+    support: Full
+    info: Full support for the normal zip format, with additional support for AES encryption, Zip64 extensions for large files, Mac OS extensions of many different kinds, and several unusual compression methods. Can also extract .EXE self-extracting files using Zip.
+  - item:
+    format: Zipx
+    support: Full
+    info: Full support for the new compression modes introduced by WinZip.
+  - item:
+    format: RAR
+    support: Full
+    info: Including encryption and multiple volumes. Can also extract .EXE self-extracting files using RAR.
+  - item:
+    format: 7z
+    support: Full
+    info: All common compression methods are supported. Also supports Unix extensions.
+  - item:
+    format: Tar
+    support: Full
+  - item:
+    format: Gzip
+    support: Full
+  - item:
+    format: Bzip2
+    support: Full
+old:
+  - item:
+    format: StuffIt
+    support: No encryption
+    info: Can unpack all files I've been able to locate.
+  - item:
+    format: StuffIt X
+    support: Partial
+    info: Can unpack many files, some more obscure features are still unsupported. JPEG compression is also unsupported.
+  - item:
+    format: DiskDoubler
+    support: Almost full
+    info: Only lacks some old compression methods, because I have not been able to locate any files using these. If you have some that do not work, please post them here.
+  - item:
+    format: Compact Pro
+    support: No encryption
+  - item:
+    format: PackIt
+    support: Full
+  - item:
+    format: Cpio
+    support: Full
+unusual:
+  - item:
+    format: XAR
+    support: Full
+    info: Suggested replacement for Tar on Unix. Used in some newer .pkg files on Mac OS X.
+  - item:
+    format: RPM
+    support: Full
+    info: Linux package format.
+  - item:
+    format: Deb
+    support: Full
+    info: Linux package format.
 ---
 
 {% extends "./layouts/_layout.njk" %}
@@ -7,13 +68,7 @@ title: Unarchiver
 {% block content %}
   <section class="topper">
     <div class="wrapper">
-      <h1 class="h1">Mac Archive Utility Pack</h1>
-      <h4 class="subtitle">Best software for archive files on macOS and iOS</h4>
-    </div>
-  </section>
-  <section class="apps">
-    <div class="wrapper">
-      <div class="product -big">
+      <div class="product -big -prod">
         <div class="product-img">
           <img src="img/unarchive.png"
                srcset="img/unarchive@2x.png 2x"
@@ -21,15 +76,178 @@ title: Unarchiver
         </div>
         <div class="product-info">
           <h2 class="product-title h2">The Unarchiver</h2>
+          <div class="product-subtitle">Quickly view archive contents</div>
           <div class="product-descr">
-            <p>The Unarchiver is the only app you need to unrar files on Mac. It’s times more powerful than the native macOS utility and supports infinitely more archive formats.
-              <a href="#">Read more</a>...</p>
+            <p>The Unarchiver is the only app you need to open RAR on Mac. It’s times more powerful than the native macOS utility and supports infinitely more archive formats.</p>
           </div>
           <button class="btn">Download for Free</button>
+          <div class="product-hint"><small>OS X 10.7 or later. For earlier versions <a href="#">click here</a>.</small></div>
         </div>
       </div>
+      <div class="benefits row">
+        <div class="col-4 mob-col-12">
+          <div class="benefit">
+            <div class="benefit-icon" style="color:#4CD964;">{{ mixins.icon('install') }}</div>
+            <div class="h4">Quick install</div>
+            <div class="benefit-text">Takes a few clicks to install and set it as a default app for all archive files.</div>
+          </div>
+        </div>
+        <div class="col-4 mob-col-12">
+          <div class="benefit">
+            <div class="benefit-icon" style="color:#FFD100;">{{ mixins.icon('star') }}</div>
+            <div class="h4">Free and always will be</div>
+            <div class="benefit-text">The Unarchiver is free. No in-app purchases for additional features.</div>
+          </div>
+        </div>
+        <div class="col-4 mob-col-12">
+          <div class="benefit">
+            <div class="benefit-icon" style="color:#FF4E00;">{{ mixins.icon('a') }}</div>
+            <div class="h4">Reads foreign characters</div>
+            <div class="benefit-text">If your archive is named with non-Latin characters, it’s not a problem.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="white">
+    <div class="wrapper">
+      <div class="slider js_slider">
+        <div class="frame js_frame">
+          <ul class="slides js_slides">
+            <li class="js_slide">
+              <img src="img/screenshot1.jpg" alt="">
+            </li>
+            <li class="js_slide">
+              <img src="img/screenshot1.jpg" alt="">
+            </li>
+            <li class="js_slide">
+              <img src="img/screenshot1.jpg" alt="">
+            </li>
+          </ul>
+        </div>
+        <button class="slider-prev js_prev">{{ mixins.icon('prev') }}</button>
+        <button class="slider-next js_next">{{ mixins.icon('next') }}</button>
+      </div>
+      <div class="formats js-show">
+        <h2 class="h2">Supported archive formats</h2>
+        <p>With The Unarchiver you can extract files from the following archive formats</p>
+        <div class="formats-box">
+          <div class="formats-wrap">
+            <div class="formats-col">
+              <div class="h4">Popular formats</div>
+              <table class="formats-table">
+                {% for item in popular %}
+                  <tr>
+                    <td><strong>{{ item.format }}</strong></td>
+                    <td>
+                      <div>
+                        <span>{{ item.support }}</span>
+                        {% if item.info %}
+                          <div class="hint">
+                            <button class="hint-btn">{{ mixins.icon('info') }}</button>
+                            <div class="hint-body">
+                              <p><strong>{{ item.format }}</strong></p>
+                              <p>{{ item.info }}</p>
+                            </div>
+                          </div>
+                        {% endif %}
+                      </div>
+                    </td>
+                  </tr>
+                {% endfor %}
+              </table>
+            </div>
+            <div class="formats-col">
+              <div class="h4">Old formats</div>
+              <table class="formats-table">
+                {% for item in old %}
+                  <tr>
+                    <td><strong>{{ item.format }}</strong></td>
+                    <td>
+                      <div>
+                        <span>{{ item.support }}</span>
+                        {% if item.info %}
+                          <div class="hint">
+                            <button class="hint-btn">{{ mixins.icon('info') }}</button>
+                            <div class="hint-body">{{ item.info }}</div>
+                          </div>
+                        {% endif %}
+                      </div>
+                    </td>
+                  </tr>
+                {% endfor %}
+              </table>
+              <div class="formats-text">Many other old formats, especially Amiga-specific ones, are also supported through libxad, but I have not made a full survey of which ones.</div>
+            </div>
+            <div class="formats-col">
+              <div class="h4">Unusual formats</div>
+              <table class="formats-table">
+                {% for item in unusual %}
+                  <tr>
+                    <td><strong>{{ item.format }}</strong></td>
+                    <td>
+                      <div>
+                        <span>{{ item.support }}</span>
+                        {% if item.info %}
+                          <div class="hint">
+                            <div class="hint-btn">{{ mixins.icon('info') }}</div>
+                            <div class="hint-body">{{ item.info }}</div>
+                          </div>
+                        {% endif %}
+                      </div>
+                    </td>
+                  </tr>
+                {% endfor %}
+              </table>
+            </div>
+          </div>
+          <div class="formats-footer">
+            <button class="btn -blue js-show-more">View All</button>
+          </div>
+        </div>
+      </div>
+      <div class="howto">
+        <h2 class="h2">How to use The Unarchiver</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="h2">1</div>
+            <div class="step-text">
+              Choose any archive file
+            </div>
+          </div>
+          <div class="step">
+            <div class="h2">2</div>
+            <div class="step-text">
+              go to File, Get info menu
+              archive file
+            </div>
+          </div>
+          <div class="step">
+            <div class="h2">3</div>
+            <div class="step-text">
+              In the Open with choose The Unarchiver
+            </div>
+          </div>
+          <div class="step">
+            <div class="h2">4</div>
+            <div class="step-text">
+              Click Change all
+            </div>
+          </div>
+        </div>
+        <div class="howto-footer">
+          <p>Now all the archive files you have will automatically open with The Unarchiver and you’ll forget the “Unknown format” alerts and extraction errors forever.</p>
+          <button class="btn">Download for Free</button>
+          <p><small>OS X 10.7 or later. For earlier versions <a href="#">click here</a>.</small></p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="more">
+    <div class="wrapper">
+      <h2 class="h2">Other Apps:</h2>
       <div class="apps-row">
-        <div class="product">
+        <a href="#" class="product -small">
           <div class="product-img">
             <img src="img/archive-browser.png"
                  srcset="img/archive-browser@2x.png 2x"
@@ -38,12 +256,11 @@ title: Unarchiver
           <div class="product-info">
             <div class="product-title h4">The Archive Browser</div>
             <div class="product-descr">
-              <p>A simple and efficient archive viewer. With this archive utility, Mac has a tool to open archive contents and Preview the files without extracting them. You can also extract separate files when needed.</p>
+              <p>The hugely popular unarchiving app for Mac OS X.</p>
             </div>
-            <a href="#" class="btn -blue">view app</a>
           </div>
-        </div>
-        <div class="product">
+        </a>
+        <a href="#" class="product -small">
           <div class="product-img">
             <img src="img/archives.png"
                  srcset="img/archives@2x.png 2x"
@@ -52,12 +269,11 @@ title: Unarchiver
           <div class="product-info">
             <div class="product-title h4">Archives</div>
             <div class="product-descr">
-              <p>With Archives, you can view archive contents on any iOS device, without your desktop computer. Unzip files on iPhone or iPad, see what’s inside, save or send them directly from the app.</p>
+              <p>Handle archives on the iPhone and iPad.</p>
             </div>
-            <a href="#" class="btn -blue">view app</a>
           </div>
-        </div>
-        <div class="product">
+        </a>
+        <a href="#" class="product -small">
           <div class="product-img">
             <img src="img/xee.png"
                  srcset="img/xee@2x.png 2x"
@@ -66,11 +282,10 @@ title: Unarchiver
           <div class="product-info">
             <div class="product-title h4">Xee <sup>3</sup></div>
             <div class="product-descr">
-              <p>Xee image viewer for Mac lets you easily work with images of all formats. It allows for a better file management, quick access, and a comfortable view of all your galleries.</p>
+              <p>Easily browse images in folders and archives on OS X.</p>
             </div>
-            <a href="#" class="btn -blue">view app</a>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
