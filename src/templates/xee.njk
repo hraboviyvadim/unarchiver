@@ -21,7 +21,15 @@ meta_descr: Xee lets you easily browse and manage images on your Mac. Browse ima
             <p>Xee is an streamlined and convenient image viewer and browser. It’s similar to Mac OS X's Preview.app, but lets you easily browse the entire contents of folders and archives, move and copy image files quickly, and supports many more image formats. times more powerful than the native macOS utility and supports infinitely more archive formats.</p>
           </div>
           <button class="btn">Download for Free</button>
-          <button class="btn -gray">Buy now</button>
+          <div class="get">
+            <button class="btn -gray">Buy now {{ mixins.icon('arr-down') }}</button>
+            <div class="get-dropdown">
+              <ul class="get-list">
+                <li><a href="#">{{ mixins.icon('macpaw') }} Store MacPaw</a></li>
+                <li><a href="#">{{ mixins.icon('apple') }} Mac App Store</a></li>
+              </ul>
+            </div>
+          </div>
           <div class="product-hint"><small>OS X 10.7 or later. For earlier versions <a href="#">click here</a>.</small></div>
         </div>
       </div>
