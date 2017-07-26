@@ -5,6 +5,7 @@
     <title>Unarchiver</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="">
     <meta name="theme-color" content="#fff">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" media="all" href="css/style.css">
@@ -291,6 +292,154 @@
                         </div>
                       </td>
                     </tr>
+                    <tr>
+                      <td>
+                        <strong>LZMA, XZ</strong>
+                      </td>
+                      <td>
+                        <div>
+                          <span>Full</span>
+                          <div class="hint">
+                            <button class="hint-btn">
+                              <svg class="icon icon-info">
+                                <use xlink:href="img/sprite.svg#icon-info"></use>
+                              </svg>
+                            </button>
+                            <div class="hint-body">
+                              <p>
+                                <strong>LZMA, XZ</strong>
+                              </p>
+                              <p>Both the old &quot;LZMA-alone&quot; format, usually named .lzma, and the new .xz format.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>CAB</strong>
+                      </td>
+                      <td>
+                        <div>
+                          <span>Full</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>MSI</strong>
+                      </td>
+                      <td>
+                        <div>
+                          <span>Full</span>
+                          <div class="hint">
+                            <button class="hint-btn">
+                              <svg class="icon icon-info">
+                                <use xlink:href="img/sprite.svg#icon-info"></use>
+                              </svg>
+                            </button>
+                            <div class="hint-body">
+                              <p>
+                                <strong>MSI</strong>
+                              </p>
+                              <p>This format is also used by many other Microsoft formats, meanings that you can use The Unarchiver to extract internal data from DOC and PPT files, and others. There is probably no reason to do this, but you can.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>NSIS</strong>
+                      </td>
+                      <td>
+                        <div>
+                          <span>Extensive</span>
+                          <div class="hint">
+                            <button class="hint-btn">
+                              <svg class="icon icon-info">
+                                <use xlink:href="img/sprite.svg#icon-info"></use>
+                              </svg>
+                            </button>
+                            <div class="hint-body">
+                              <p>
+                                <strong>NSIS</strong>
+                              </p>
+                              <p>Supports many different versions, starting from version 1.1o</p>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>EXE</strong>
+                      </td>
+                      <td>
+                        <div>
+                          <span>Some</span>
+                          <div class="hint">
+                            <button class="hint-btn">
+                              <svg class="icon icon-info">
+                                <use xlink:href="img/sprite.svg#icon-info"></use>
+                              </svg>
+                            </button>
+                            <div class="hint-body">
+                              <p>
+                                <strong>EXE</strong>
+                              </p>
+                              <p>Many kinds of .exe self-extracting formats are supported. However, if you find one that is not, please post an issue on the bug tracker.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>ISO, BIN, MDF, NRG, CDI</strong>
+                      </td>
+                      <td>
+                        <div>
+                          <span>Extensive</span>
+                          <div class="hint">
+                            <button class="hint-btn">
+                              <svg class="icon icon-info">
+                                <use xlink:href="img/sprite.svg#icon-info"></use>
+                              </svg>
+                            </button>
+                            <div class="hint-body">
+                              <p>
+                                <strong>ISO, BIN, MDF, NRG, CDI</strong>
+                              </p>
+                              <p>Most common disc images can be unpacked, both normal and raw.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>Split files</strong>
+                      </td>
+                      <td>
+                        <div>
+                          <span>Basic</span>
+                          <div class="hint">
+                            <button class="hint-btn">
+                              <svg class="icon icon-info">
+                                <use xlink:href="img/sprite.svg#icon-info"></use>
+                              </svg>
+                            </button>
+                            <div class="hint-body">
+                              <p>
+                                <strong>Split files</strong>
+                              </p>
+                              <p>Can join files named .001, .002 that do not use any extra wrapper format.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
                   </table>
                 </div>
                 <div class="formats-col">
@@ -309,7 +458,12 @@
                                 <use xlink:href="img/sprite.svg#icon-info"></use>
                               </svg>
                             </button>
-                            <div class="hint-body">Can unpack all files I&#39;ve been able to locate.</div>
+                            <div class="hint-body">
+                              <p>
+                                <strong>StuffIt</strong>
+                              </p>
+                              <p>Can unpack all files I&#39;ve been able to locate.</p>
+                            </div>
                           </div>
                         </div>
                       </td>
@@ -327,7 +481,12 @@
                                 <use xlink:href="img/sprite.svg#icon-info"></use>
                               </svg>
                             </button>
-                            <div class="hint-body">Can unpack many files, some more obscure features are still unsupported. JPEG compression is also unsupported.</div>
+                            <div class="hint-body">
+                              <p>
+                                <strong>StuffIt X</strong>
+                              </p>
+                              <p>Can unpack many files, some more obscure features are still unsupported. JPEG compression is also unsupported.</p>
+                            </div>
                           </div>
                         </div>
                       </td>
@@ -345,7 +504,12 @@
                                 <use xlink:href="img/sprite.svg#icon-info"></use>
                               </svg>
                             </button>
-                            <div class="hint-body">Only lacks some old compression methods, because I have not been able to locate any files using these. If you have some that do not work, please post them here.</div>
+                            <div class="hint-body">
+                              <p>
+                                <strong>DiskDoubler</strong>
+                              </p>
+                              <p>Only lacks some old compression methods, because I have not been able to locate any files using these. If you have some that do not work, please post them here.</p>
+                            </div>
                           </div>
                         </div>
                       </td>
@@ -380,6 +544,188 @@
                         </div>
                       </td>
                     </tr>
+                    <tr>
+                      <td>
+                        <strong>Compress (.Z)</strong>
+                      </td>
+                      <td>
+                        <div>
+                          <span>Full</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>ARJ</strong>
+                      </td>
+                      <td>
+                        <div>
+                          <span>No multi-part</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>ARC, PAK</strong>
+                      </td>
+                      <td>
+                        <div>
+                          <span>Full</span>
+                          <div class="hint">
+                            <button class="hint-btn">
+                              <svg class="icon icon-info">
+                                <use xlink:href="img/sprite.svg#icon-info"></use>
+                              </svg>
+                            </button>
+                            <div class="hint-body">
+                              <p>
+                                <strong>ARC, PAK</strong>
+                              </p>
+                              <p>Full support for all algorithms, including proprietary ones from PAK. Encryption only works in command-line utilities.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>Ace</strong>
+                      </td>
+                      <td>
+                        <div>
+                          <span>Only old files</span>
+                          <div class="hint">
+                            <button class="hint-btn">
+                              <svg class="icon icon-info">
+                                <use xlink:href="img/sprite.svg#icon-info"></use>
+                              </svg>
+                            </button>
+                            <div class="hint-body">
+                              <p>
+                                <strong>Ace</strong>
+                              </p>
+                              <p>No support for Ace 2.0 and up (WinAce).</p>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>Zoo</strong>
+                      </td>
+                      <td>
+                        <div>
+                          <span>Full</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>LZH</strong>
+                      </td>
+                      <td>
+                        <div>
+                          <span>Full</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>ADF</strong>
+                      </td>
+                      <td>
+                        <div>
+                          <span>FFS</span>
+                          <div class="hint">
+                            <button class="hint-btn">
+                              <svg class="icon icon-info">
+                                <use xlink:href="img/sprite.svg#icon-info"></use>
+                              </svg>
+                            </button>
+                            <div class="hint-body">
+                              <p>
+                                <strong>ADF</strong>
+                              </p>
+                              <p>Can extract files from Amiga disk images using the regular FFS file system.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>DMS</strong>
+                      </td>
+                      <td>
+                        <div>
+                          <span>FFS</span>
+                          <div class="hint">
+                            <button class="hint-btn">
+                              <svg class="icon icon-info">
+                                <use xlink:href="img/sprite.svg#icon-info"></use>
+                              </svg>
+                            </button>
+                            <div class="hint-body">
+                              <p>
+                                <strong>DMS</strong>
+                              </p>
+                              <p>Can extract files from compressed Amiga disk images using the regular FFS file system.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>LZX</strong>
+                      </td>
+                      <td>
+                        <div>
+                          <span>Full</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>PowerPacker</strong>
+                      </td>
+                      <td>
+                        <div>
+                          <span>Full</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>LBR</strong>
+                      </td>
+                      <td>
+                        <div>
+                          <span>Full</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>Squeeze</strong>
+                      </td>
+                      <td>
+                        <div>
+                          <span>Full</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>Crunch</strong>
+                      </td>
+                      <td>
+                        <div>
+                          <span>Full</span>
+                        </div>
+                      </td>
+                    </tr>
                   </table>
                   <div class="formats-text">Many other old formats, especially Amiga-specific ones, are also supported through libxad, but I have not made a full survey of which ones.</div>
                 </div>
@@ -392,14 +738,19 @@
                       </td>
                       <td>
                         <div>
-                          <span>Full</span>
+                          <span>FFS</span>
                           <div class="hint">
-                            <div class="hint-btn">
+                            <button class="hint-btn">
                               <svg class="icon icon-info">
                                 <use xlink:href="img/sprite.svg#icon-info"></use>
                               </svg>
+                            </button>
+                            <div class="hint-body">
+                              <p>
+                                <strong>XAR</strong>
+                              </p>
+                              <p>Suggested replacement for Tar on Unix. Used in some newer .pkg files on Mac OS X.</p>
                             </div>
-                            <div class="hint-body">Suggested replacement for Tar on Unix. Used in some newer .pkg files on Mac OS X.</div>
                           </div>
                         </div>
                       </td>
@@ -412,12 +763,17 @@
                         <div>
                           <span>Full</span>
                           <div class="hint">
-                            <div class="hint-btn">
+                            <button class="hint-btn">
                               <svg class="icon icon-info">
                                 <use xlink:href="img/sprite.svg#icon-info"></use>
                               </svg>
+                            </button>
+                            <div class="hint-body">
+                              <p>
+                                <strong>RPM</strong>
+                              </p>
+                              <p>Linux package format.</p>
                             </div>
-                            <div class="hint-body">Linux package format.</div>
                           </div>
                         </div>
                       </td>
@@ -430,12 +786,178 @@
                         <div>
                           <span>Full</span>
                           <div class="hint">
-                            <div class="hint-btn">
+                            <button class="hint-btn">
                               <svg class="icon icon-info">
                                 <use xlink:href="img/sprite.svg#icon-info"></use>
                               </svg>
+                            </button>
+                            <div class="hint-body">
+                              <p>
+                                <strong>Deb</strong>
+                              </p>
+                              <p>Linux package format.</p>
                             </div>
-                            <div class="hint-body">Linux package format.</div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>Ar</strong>
+                      </td>
+                      <td>
+                        <div>
+                          <span>Full</span>
+                          <div class="hint">
+                            <button class="hint-btn">
+                              <svg class="icon icon-info">
+                                <use xlink:href="img/sprite.svg#icon-info"></use>
+                              </svg>
+                            </button>
+                            <div class="hint-body">
+                              <p>
+                                <strong>Ar</strong>
+                              </p>
+                              <p>Unix library format.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>ALZip</strong>
+                      </td>
+                      <td>
+                        <div>
+                          <span>No encryption</span>
+                          <div class="hint">
+                            <button class="hint-btn">
+                              <svg class="icon icon-info">
+                                <use xlink:href="img/sprite.svg#icon-info"></use>
+                              </svg>
+                            </button>
+                            <div class="hint-body">
+                              <p>
+                                <strong>ALZip</strong>
+                              </p>
+                              <p>Archive format which is mainly popular in South Korea. Support for all known compression methods, including Bzip2, Deflate and obfuscated Deflate.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>WARC</strong>
+                      </td>
+                      <td>
+                        <div>
+                          <span>Full</span>
+                          <div class="hint">
+                            <button class="hint-btn">
+                              <svg class="icon icon-info">
+                                <use xlink:href="img/sprite.svg#icon-info"></use>
+                              </svg>
+                            </button>
+                            <div class="hint-body">
+                              <p>
+                                <strong>WARC</strong>
+                              </p>
+                              <p>Internet Archive Web Archive. Request and response headers also included in metadata.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>NSA, SAR</strong>
+                      </td>
+                      <td>
+                        <div>
+                          <span>Partial</span>
+                          <div class="hint">
+                            <button class="hint-btn">
+                              <svg class="icon icon-info">
+                                <use xlink:href="img/sprite.svg#icon-info"></use>
+                              </svg>
+                            </button>
+                            <div class="hint-body">
+                              <p>
+                                <strong>NSA, SAR</strong>
+                              </p>
+                              <p>Game data file. Can unpack all files I&#39;ve found. If you have ones that do not unpack, please post an issue.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>NDS</strong>
+                      </td>
+                      <td>
+                        <div>
+                          <span>Full</span>
+                          <div class="hint">
+                            <button class="hint-btn">
+                              <svg class="icon icon-info">
+                                <use xlink:href="img/sprite.svg#icon-info"></use>
+                              </svg>
+                            </button>
+                            <div class="hint-body">
+                              <p>
+                                <strong>NDS</strong>
+                              </p>
+                              <p>Nintendo DS ROM image, which can contain a file system.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>SWF</strong>
+                      </td>
+                      <td>
+                        <div>
+                          <span>Images and audio</span>
+                          <div class="hint">
+                            <button class="hint-btn">
+                              <svg class="icon icon-info">
+                                <use xlink:href="img/sprite.svg#icon-info"></use>
+                              </svg>
+                            </button>
+                            <div class="hint-body">
+                              <p>
+                                <strong>SWF</strong>
+                              </p>
+                              <p>Extracts images, sounds and music from Flash files.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>PDF</strong>
+                      </td>
+                      <td>
+                        <div>
+                          <span>Bitmap images</span>
+                          <div class="hint">
+                            <button class="hint-btn">
+                              <svg class="icon icon-info">
+                                <use xlink:href="img/sprite.svg#icon-info"></use>
+                              </svg>
+                            </button>
+                            <div class="hint-body">
+                              <p>
+                                <strong>PDF</strong>
+                              </p>
+                              <p>Extracts bitmap images from PDF files. Especially useful for scanned PDFs.</p>
+                            </div>
                           </div>
                         </div>
                       </td>

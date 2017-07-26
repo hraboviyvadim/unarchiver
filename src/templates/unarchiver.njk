@@ -26,6 +26,34 @@ popular:
   - item:
     format: Bzip2
     support: Full
+  - item:
+    format: LZMA, XZ
+    support: Full
+    info: Both the old "LZMA-alone" format, usually named .lzma, and the new .xz format.
+  - item:
+    format: CAB
+    support: Full
+  - item:
+    format: MSI
+    support: Full
+    info: This format is also used by many other Microsoft formats, meanings that you can use The Unarchiver to extract internal data from DOC and PPT files, and others. There is probably no reason to do this, but you can.
+  - item:
+    format: NSIS
+    support: Extensive
+    info: Supports many different versions, starting from version 1.1o
+  - item:
+    format: EXE
+    support: Some
+    info: Many kinds of .exe self-extracting formats are supported. However, if you find one that is not, please post an issue on the bug tracker.
+  - item:
+    format: ISO, BIN, MDF, NRG, CDI
+    support: Extensive
+    info: Most common disc images can be unpacked, both normal and raw.
+  - item:
+    format: Split files
+    support: Basic
+    info: Can join files named .001, .002 that do not use any extra wrapper format.
+
 old:
   - item:
     format: StuffIt
@@ -48,10 +76,53 @@ old:
   - item:
     format: Cpio
     support: Full
+  - item:
+    format: Compress (.Z)
+    support: Full
+  - item:
+    format: ARJ
+    support: No multi-part
+  - item:
+    format: ARC, PAK
+    support: Full
+    info: Full support for all algorithms, including proprietary ones from PAK. Encryption only works in command-line utilities.
+  - item:
+    format: Ace
+    support: Only old files
+    info: No support for Ace 2.0 and up (WinAce).
+  - item:
+    format: Zoo
+    support: Full
+  - item:
+    format: LZH
+    support: Full
+  - item:
+    format: ADF
+    support: FFS
+    info: Can extract files from Amiga disk images using the regular FFS file system.
+  - item:
+    format: DMS
+    support: FFS
+    info: Can extract files from compressed Amiga disk images using the regular FFS file system.
+  - item:
+    format: LZX
+    support: Full
+  - item:
+    format: PowerPacker
+    support: Full
+  - item:
+    format: LBR
+    support: Full
+  - item:
+    format: Squeeze
+    support: Full
+  - item:
+    format: Crunch
+    support: Full
 unusual:
   - item:
     format: XAR
-    support: Full
+    support: FFS
     info: Suggested replacement for Tar on Unix. Used in some newer .pkg files on Mac OS X.
   - item:
     format: RPM
@@ -61,6 +132,34 @@ unusual:
     format: Deb
     support: Full
     info: Linux package format.
+  - item:
+    format: Ar
+    support: Full
+    info: Unix library format.
+  - item:
+    format: ALZip
+    support: No encryption
+    info: Archive format which is mainly popular in South Korea. Support for all known compression methods, including Bzip2, Deflate and obfuscated Deflate.
+  - item:
+    format: WARC
+    support: Full
+    info: Internet Archive Web Archive. Request and response headers also included in metadata.
+  - item:
+    format: NSA, SAR
+    support: Partial
+    info: Game data file. Can unpack all files I've found. If you have ones that do not unpack, please post an issue.
+  - item:
+    format: NDS
+    support: Full
+    info: Nintendo DS ROM image, which can contain a file system.
+  - item:
+    format: SWF
+    support: Images and audio
+    info: Extracts images, sounds and music from Flash files.
+  - item:
+    format: PDF
+    support: Bitmap images
+    info: Extracts bitmap images from PDF files. Especially useful for scanned PDFs.
 ---
 
 {% extends "./layouts/_layout.njk" %}
@@ -169,7 +268,10 @@ unusual:
                         {% if item.info %}
                           <div class="hint">
                             <button class="hint-btn">{{ mixins.icon('info') }}</button>
-                            <div class="hint-body">{{ item.info }}</div>
+                            <div class="hint-body">
+                              <p><strong>{{ item.format }}</strong></p>
+                              <p>{{ item.info }}</p>
+                            </div>
                           </div>
                         {% endif %}
                       </div>
@@ -190,8 +292,11 @@ unusual:
                         <span>{{ item.support }}</span>
                         {% if item.info %}
                           <div class="hint">
-                            <div class="hint-btn">{{ mixins.icon('info') }}</div>
-                            <div class="hint-body">{{ item.info }}</div>
+                            <button class="hint-btn">{{ mixins.icon('info') }}</button>
+                            <div class="hint-body">
+                              <p><strong>{{ item.format }}</strong></p>
+                              <p>{{ item.info }}</p>
+                            </div>
                           </div>
                         {% endif %}
                       </div>
