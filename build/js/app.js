@@ -978,14 +978,36 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   })();
+  /* eslint no-param-reassign: "off", max-len: "off" */
+  var closest = function closest(el, selector) {
+    var matchesSelector = el.matches || el.webkitMatchesSelector || el.mozMatchesSelector || el.msMatchesSelector;
+    while (el) {
+      if (matchesSelector.call(el, selector)) {
+        return el;
+      }
+      el = el.parentElement;
+    }
+    return null;
+  };
   // hint
   (function () {
     var hint = document.querySelectorAll('.hint');
     [].slice.call(hint).forEach(function (item) {
       var btn = item.querySelector('.hint-btn');
-      btn.addEventListener('click', function () {
-        item.classList.add('is-open');
+      btn.addEventListener('click', function (e) {
+        [].slice.call(hint).forEach(function (modal) {
+          modal.classList.remove('is-open');
+        });
+        e.target.closest('.hint').classList.add('is-open');
       });
+    });
+    document.addEventListener('click', function (e) {
+      var parent = e.target.closest('.hint');
+      if (!parent) {
+        [].slice.call(hint).forEach(function (item) {
+          item.classList.remove('is-open');
+        });
+      }
     });
   })();
 });
