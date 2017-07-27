@@ -20,17 +20,16 @@ meta_descr: Xee lets you easily browse and manage images on your Mac. Browse ima
           <div class="product-descr">
             <p>Xee is an streamlined and convenient image viewer and browser. It’s similar to Mac OS X's Preview.app, but lets you easily browse the entire contents of folders and archives, move and copy image files quickly, and supports many more image formats. times more powerful than the native macOS utility and supports infinitely more archive formats.</p>
           </div>
-          <button class="btn">Download</button>
+          <a href="/downloads/Xee3.zip" class="btn">Download</a>
           <div class="get">
             <button class="btn -gray">Buy Now {{ mixins.icon('arr-down') }}</button>
             <div class="get-dropdown">
               <ul class="get-list">
-                <li><a href="#">{{ mixins.icon('macpaw') }} Store MacPaw</a></li>
-                <li><a href="#">{{ mixins.icon('apple') }} Mac App Store</a></li>
+                <li><button class="js-paddle" data-product="489614">{{ mixins.icon('macpaw') }} MacPaw Store</button></li>
+                <li><a href="https://itunes.apple.com/us/app/xee/id639764244?mt=12">{{ mixins.icon('apple') }} Mac App Store</a></li>
               </ul>
             </div>
           </div>
-          <div class="product-hint"><small>OS X 10.7 or later. For earlier versions <a href="#">click here</a>.</small></div>
         </div>
       </div>
       <div class="benefits row">
@@ -80,20 +79,37 @@ meta_descr: Xee lets you easily browse and manage images on your Mac. Browse ima
       <div class="howto">
         <div class="howto-footer">
           <p>Xee is an Mac image viewer we always wanted and never had. It’s sleek, it’s fast, and it works with all types of images.</p>
-          <button class="btn">Download</button>
+          <a href="/downloads/Xee3.zip" class="btn">Download</a>
           <div class="get">
             <button class="btn -gray">Buy Now {{ mixins.icon('arr-down') }}</button>
             <div class="get-dropdown">
               <ul class="get-list">
-                <li><a href="#">{{ mixins.icon('macpaw') }} Store MacPaw</a></li>
-                <li><a href="#">{{ mixins.icon('apple') }} Mac App Store</a></li>
+                <li><button class="js-paddle" data-product="489614">{{ mixins.icon('macpaw') }} MacPaw Store</button></li>
+                <li><a href="https://itunes.apple.com/us/app/xee/id639764244?mt=12">{{ mixins.icon('apple') }} Mac App Store</a></li>
               </ul>
             </div>
           </div>
-          <p><small>OS X 10.7 or later. For earlier versions <a href="#">click here</a>.</small></p>
         </div>
       </div>
     </div>
   </section>
   {% include "./partials/_more.njk" %}
+{% endblock %}
+
+{% block paddle %}
+  <script src="https://cdn.paddle.com/paddle/paddle.js"></script>
+  <script type="text/javascript">
+    Paddle.Setup({
+      vendor: 126
+    });
+    [].slice.call(document.querySelectorAll('.js-paddle')).forEach(function(btn) {
+      btn.addEventListener('click', function (e) {
+        var productId = e.target.getAttribute('data-product');
+        Paddle.Checkout.open({
+          product: productId,
+          passthrough: 126
+        })
+      });
+    });
+  </script>
 {% endblock %}

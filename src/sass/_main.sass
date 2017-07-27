@@ -73,8 +73,6 @@
     font-size: 27px
     font-weight: $light
     color: $dark
-  .product-hint
-    padding-top: 10px
   .product-descr
     margin-bottom: 20px
     font-size: $default
@@ -151,10 +149,12 @@ a.product
   display: inline-block
   vertical-align: middle
   font-size: 0
+  margin-bottom: 10px
 .get
   position: relative
   display: inline-block
   vertical-align: middle
+  margin-bottom: 10px
   &:hover
     .get-dropdown
       opacity: 1
@@ -186,10 +186,12 @@ a.product
     li
       &:not(:first-child)
         border-top: 1px solid rgba(#fff, 0.3)
-      a
+      a, button
         display: inline-block
         padding: 10px 0
         color: #fff
+        font-size: 18px
+        background: none
         .icon
           display: inline-block
           margin-right: 5px

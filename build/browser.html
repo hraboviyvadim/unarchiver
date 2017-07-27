@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <title>The Archive Browser for Mac | View Archive Contents</title>
@@ -20,7 +20,7 @@
           <nav class="nav">
             <ul class="menu">
               <li class="menu-item">
-                <a class="menu-link" href="index.html">Home</a>
+                <a class="menu-link" href="/">Home</a>
               </li>
               <li class="menu-item">
                 <span class="menu-link">Products
@@ -29,7 +29,7 @@
                 <div class="dropdown">
                   <ul class="dropdown-menu">
                     <li class="dropdown-item">
-                      <a href="unarchiver.html" class="dropdown-link">
+                      <a href="unarchiver" class="dropdown-link">
                         <div class="dropdown-icon">
                           <img src="img/unarchive.png" alt="">
                         </div>
@@ -37,7 +37,7 @@
                       </a>
                     </li>
                     <li class="dropdown-item">
-                      <a href="browser.html" class="dropdown-link">
+                      <a href="browser" class="dropdown-link">
                         <div class="dropdown-icon">
                           <img src="img/archive-browser.png" alt="">
                         </div>
@@ -45,7 +45,7 @@
                       </a>
                     </li>
                     <li class="dropdown-item">
-                      <a href="xee.html" class="dropdown-link">
+                      <a href="xee" class="dropdown-link">
                         <div class="dropdown-icon">
                           <img src="img/xee.png" alt="">
                         </div>
@@ -55,7 +55,7 @@
                       </a>
                     </li>
                     <li class="dropdown-item">
-                      <a href="archives.html" class="dropdown-link">
+                      <a href="archives" class="dropdown-link">
                         <div class="dropdown-icon">
                           <img src="img/archives.png" alt="">
                         </div>
@@ -85,7 +85,7 @@
               <div class="product-descr">
                 <p>The Archive Browser lets you easily peek into the archive, find the files you need, preview and extract them without unarchiving everything. Quick Look any file or folder and open them right from the archive</p>
               </div>
-              <button class="btn">Download</button>
+              <a href="/downloads/TheArchiveBrowser.zip" class="btn">Download</a>
               <div class="get">
                 <button class="btn -gray">Buy Now
                   <svg class="icon icon-arr-down">
@@ -95,14 +95,14 @@
                 <div class="get-dropdown">
                   <ul class="get-list">
                     <li>
-                      <a href="#">
+                      <button class="js-paddle" data-product="489450">
                         <svg class="icon icon-macpaw">
                           <use xlink:href="img/sprite.svg#icon-macpaw"></use>
                         </svg>
-                        Store MacPaw</a>
+                        MacPaw Store</button>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="https://itunes.apple.com/us/app/the-archive-browser/id510232205?mt=12">
                         <svg class="icon icon-apple">
                           <use xlink:href="img/sprite.svg#icon-apple"></use>
                         </svg>
@@ -110,10 +110,6 @@
                     </li>
                   </ul>
                 </div>
-              </div>
-              <div class="product-hint">
-                <small>OS X 10.7 or later. For earlier versions
-                  <a href="#">click here</a>.</small>
               </div>
             </div>
           </div>
@@ -201,7 +197,7 @@
             </div>
             <div class="howto-footer">
               <p>You can click any file inside the archive to get additional info and Quick Look or open it with Preview.</p>
-              <button class="btn">Download</button>
+              <a href="/downloads/TheArchiveBrowser.zip" class="btn">Download</a>
               <div class="get">
                 <button class="btn -gray">Buy Now
                   <svg class="icon icon-arr-down">
@@ -211,14 +207,14 @@
                 <div class="get-dropdown">
                   <ul class="get-list">
                     <li>
-                      <a href="#">
+                      <button class="js-paddle" data-product="489450">
                         <svg class="icon icon-macpaw">
                           <use xlink:href="img/sprite.svg#icon-macpaw"></use>
                         </svg>
-                        Store MacPaw</a>
+                        MacPaw Store</button>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="https://itunes.apple.com/us/app/the-archive-browser/id510232205?mt=12">
                         <svg class="icon icon-apple">
                           <use xlink:href="img/sprite.svg#icon-apple"></use>
                         </svg>
@@ -227,10 +223,6 @@
                   </ul>
                 </div>
               </div>
-              <p>
-                <small>OS X 10.7 or later. For earlier versions
-                  <a href="#">click here</a>.</small>
-              </p>
             </div>
           </div>
         </div>
@@ -239,7 +231,7 @@
         <div class="wrapper">
           <h2 class="h2">Other Apps:</h2>
           <div class="apps-row">
-            <a href="browser.html" class="product -small">
+            <a href="browser" class="product -small">
               <div class="product-img">
                 <img src="img/archive-browser.png" srcset="img/archive-browser@2x.png 2x" alt="">
               </div>
@@ -250,7 +242,7 @@
                 </div>
               </div>
             </a>
-            <a href="archives.html" class="product -small">
+            <a href="archives" class="product -small">
               <div class="product-img">
                 <img src="img/archives.png" srcset="img/archives@2x.png 2x" alt="">
               </div>
@@ -261,7 +253,7 @@
                 </div>
               </div>
             </a>
-            <a href="xee.html" class="product -small">
+            <a href="xee" class="product -small">
               <div class="product-img">
                 <img src="img/xee.png" srcset="img/xee@2x.png 2x" alt="">
               </div>
@@ -291,6 +283,27 @@
     <!-- BEGIN scripts -->
     <script type="text/javascript" src="js/app.js"></script>
     <!-- END scripts -->
+
+    <script src="https://cdn.paddle.com/paddle/paddle.js"></script>
+    <script type="text/javascript">
+      Paddle.Setup(
+      {
+        vendor: 126
+      });
+      [].slice.call(document.querySelectorAll('.js-paddle')).forEach(function(btn)
+      {
+        btn.addEventListener('click', function(e)
+        {
+          var productId = e.target.getAttribute('data-product');
+          Paddle.Checkout.open(
+          {
+            product: productId,
+            passthrough: 126
+          })
+        });
+      });
+
+    </script>
 
     <!-- Google Tag Manager -->
     <script>

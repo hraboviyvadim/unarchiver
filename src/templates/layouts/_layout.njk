@@ -1,6 +1,6 @@
 {% import "./_mixins.njk" as mixins %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     {% include "layouts/_head.njk" %}
 </head>
@@ -21,6 +21,8 @@
 <!-- BEGIN scripts -->
 <script type="text/javascript" src="js/app.js"></script>
 <!-- END scripts -->
+
+{% block paddle %}{% endblock %}
 
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
