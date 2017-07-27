@@ -156,7 +156,7 @@ a.product
   display: inline-block
   vertical-align: middle
   &:hover
-    .get-list
+    .get-dropdown
       opacity: 1
       visibility: visible
   .btn
@@ -168,15 +168,15 @@ a.product
     width: 290px
     padding-top: 10px
     transform: translateX(-50%)
+    transition: opacity 300ms
+    opacity: 0
+    visibility: hidden
   .get-list
     position: relative
     padding: 15px 30px
     border-radius: 12px
     text-align: left
     background: rgba(#000624, .95)
-    transition: opacity 300ms
-    opacity: 0
-    visibility: hidden
     &:before
       content: ""
       position: absolute
