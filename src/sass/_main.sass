@@ -173,7 +173,7 @@ a.product
     visibility: hidden
   .get-list
     position: relative
-    padding: 15px 30px
+    padding: 15px 0
     border-radius: 12px
     text-align: left
     background: rgba(#000624, .95)
@@ -184,16 +184,19 @@ a.product
       right: 105px
       +arr(10, 5, rgba(#000624, .95), t)
     li
-      &:not(:first-child)
-        border-top: 1px solid rgba(#fff, 0.3)
       a, button
         display: inline-block
-        padding: 10px 0
+        width: 100%
+        padding: 10px 20px
         color: #fff
         font-size: 18px
         background: none
+        border-radius: 1px
+        text-align: left
+        transition: background 300ms
         .icon
           display: inline-block
           margin-right: 5px
         &:hover
           text-decoration: none
+          background: rgba(#fff, .18)
