@@ -167,6 +167,33 @@ meta_descr: Get the top application for viewing files in archives on Mac. Quick 
 {% block paddle %}
   <script src="https://cdn.paddle.com/paddle/paddle.js"></script>
   <script type="text/javascript">
+    var Helpers = function() {};
+    Helpers.prototype.setCookie = function(name, value, days) {
+      var expires = '';
+      if (days) {
+        var date = new Date();
+        date.setDate(date.getDate() + days);
+        var expires = '; expires=' + date.toGMTString();
+      }
+      document.cookie = name + '=' + value + expires + '; path=/';
+    }
+    Helpers.prototype.getCookie = function(name) {
+      var cookies = document.cookie.split(';');
+      for (var i = 0; i < cookies.length; i++) {
+        var current_cookie = cookies[i];
+        var current_name = current_cookie.substr(0, current_cookie.indexOf('='));
+        // trim
+        current_name = current_name.replace(/^\s+|\s+$/g,'');
+        if (current_name == name) {
+          return decodeURI(current_cookie.substr(current_cookie.indexOf('=') + 1));
+        }
+      }
+      return false;
+    }
+    Helpers.prototype.remCookie = function(name) {
+      this.setCookie(name, '', -1);
+    }
+    var helpers = new Helpers();
     Paddle.Setup({
       vendor: 126,
       eventCallback: function (event) {
@@ -214,27 +241,30 @@ meta_descr: Get the top application for viewing files in archives on Mac. Quick 
           dataLayer.push(obj);
         }
         if (event.event == 'Checkout.Complete') {
-          dataLayer.push({
-            'event': 'macpaw-paddle-purchase',
-            'paddle-currency': event.eventData.checkout.prices.vendor.currency,
-            'paddle-referrer': event.checkoutData.parentURL,
-            'paddle-eventCategory': 'Checkout',
-            'paddle-eventAction': event.event,
-            'ecommerce': {
-              'purchase': {
-                'actionField': {
-                  'id': event.eventData.checkout.id,
-                  'revenue': event.eventData.checkout.prices.vendor.total
-                },
-                'products': [{
-                  'name': event.eventData.product.name,
-                  'id': event.eventData.product.id,
-                  'price': event.eventData.checkout.prices.vendor.total,
-                  'quantity': event.eventData.product.quantity
-                }]
+          if (helpers.getCookie('cookieOrderId') != event.eventData.checkout.id) {
+            dataLayer.push({
+              'event': 'macpaw-paddle-purchase',
+              'paddle-currency': event.eventData.checkout.prices.vendor.currency,
+              'paddle-referrer': event.checkoutData.parentURL,
+              'paddle-eventCategory': 'Checkout',
+              'paddle-eventAction': event.event,
+              'ecommerce': {
+                'purchase': {
+                  'actionField': {
+                    'id': event.eventData.checkout.id,
+                    'revenue': event.eventData.checkout.prices.vendor.total
+                  },
+                  'products': [{
+                    'name': event.eventData.product.name,
+                    'id': event.eventData.product.id,
+                    'price': event.eventData.checkout.prices.vendor.total,
+                    'quantity': event.eventData.product.quantity
+                  }]
+                }
               }
-            }
-          });
+            });
+          }
+          helpers.setCookie('cookieOrderId', event.eventData.checkout.id);
         }
       }
     });
