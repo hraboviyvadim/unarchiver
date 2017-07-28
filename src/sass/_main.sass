@@ -97,13 +97,11 @@
       left: auto
       bottom: auto
       transform: none
-      margin: 0 10px 10px 0
+      margin-bottom: 10px
     +r(1024)
       padding: 30px
     +r(768)
       padding: 10px
-      .btn
-        margin: 0 0 10px
     .product-img, .product-info
       display: inline-block
       vertical-align: middle
@@ -200,3 +198,57 @@ a.product
         &:hover
           text-decoration: none
           background: rgba(#fff, .18)
+
+.command
+  padding: 120px 0 145px
+  font-size: 0
+  .command-block
+    display: inline-block
+    vertical-align: top
+    width: 50%
+    margin-bottom: 80px
+    padding-right: 20px
+    font-size: 18px
+    .h4
+      text-align: left
+    p
+      margin-bottom: 20px
+    code
+      color: #42465B
+      
+.alert
+  position: relative
+  padding: 17px
+  background: #39D126
+  .alert-body
+    +clr
+    +r(768)
+      text-align: center
+  .alert-left
+    float: left
+    +r(768)
+      float: none
+      margin-bottom: 10px
+  .alert-right
+    float: right
+    +r(768)
+      float: none
+  .alert-row
+    font-size: 0
+  .alert-col
+    display: inline-block
+    vertical-align: middle
+    margin-right: 25px
+    font-size: 18px
+    font-weight: bold
+    color: #fff
+    +r(1024)
+      font-size: 16px
+      margin-right: 10px
+    +r(768)
+      margin-bottom: 10px
+    .icon-macpaw
+      font-size: 32px
+    img
+      width: auto
+      height: 32px

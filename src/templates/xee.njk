@@ -1,5 +1,6 @@
 ---
-title: Xee Image Viewer for macOS
+url: https://theunarchiver.com/xee
+title: Xee | Image Viewer for macOS
 meta_descr: Xee lets you easily browse and manage images on your Mac. Browse images within folders and archives, move and copy them right in the app.
 ---
 
@@ -18,7 +19,7 @@ meta_descr: Xee lets you easily browse and manage images on your Mac. Browse ima
           <h2 class="product-title h2">Xee <sup>3</sup></h2>
           <div class="product-subtitle">Image viewer for macOS</div>
           <div class="product-descr">
-            <p>Xee is an streamlined and convenient image viewer and browser. It’s similar to Mac OS X's Preview.app, but lets you easily browse the entire contents of folders and archives, move and copy image files quickly, and supports many more image formats. times more powerful than the native macOS utility and supports infinitely more archive formats.</p>
+            <p>Xee is an streamlined and convenient image viewer and browser. It’s similar to macOS's Preview.app, but lets you easily browse the entire contents of folders and archives, move and copy image files quickly, and supports many more image formats.</p>
           </div>
           <a href="/downloads/Xee3.zip" class="btn">Download</a>
           <div class="get">
@@ -59,22 +60,26 @@ meta_descr: Xee lets you easily browse and manage images on your Mac. Browse ima
   </section>
   <section class="white">
     <div class="wrapper">
-      <div class="slider js_slider">
-        <div class="frame js_frame">
-          <ul class="slides js_slides">
-            <li class="js_slide">
-              <img src="img/screenshot1.jpg" alt="">
-            </li>
-            <li class="js_slide">
-              <img src="img/screenshot1.jpg" alt="">
-            </li>
-            <li class="js_slide">
-              <img src="img/screenshot1.jpg" alt="">
-            </li>
-          </ul>
+      <div class="swiper-container js-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="img/xee-screenshot-01.png"
+                 srcset="img/xee-screenshot-01@2x.png 2x"
+                 alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="img/xee-screenshot-02.png"
+                 srcset="img/xee-screenshot-02@2x.png 2x"
+                 alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="img/xee-screenshot-03.png"
+                 srcset="img/xee-screenshot-03@2x.png 2x"
+                 alt="">
+          </div>
         </div>
-        <button class="slider-prev js_prev">{{ mixins.icon('prev') }}</button>
-        <button class="slider-next js_next">{{ mixins.icon('next') }}</button>
+        <button class="swiper-prev js-prev">{{ mixins.icon('prev') }}</button>
+        <button class="swiper-next js-next">{{ mixins.icon('next') }}</button>
       </div>
       <div class="howto">
         <div class="howto-footer">
@@ -93,14 +98,127 @@ meta_descr: Xee lets you easily browse and manage images on your Mac. Browse ima
       </div>
     </div>
   </section>
-  {% include "./partials/_more.njk" %}
+  <section class="more">
+    <div class="wrapper">
+      <h2 class="h2">Other Apps:</h2>
+      <div class="apps-row">
+        <a href="/" class="product -small">
+          <div class="product-img">
+            <img src="img/unarchiver.png"
+                 srcset="img/unarchiver@2x.png 2x"
+                 alt="">
+          </div>
+          <div class="product-info">
+            <div class="product-title h4">The Unarchiver</div>
+            <div class="product-descr">
+              <p>Open any archive in seconds</p>
+            </div>
+          </div>
+        </a>
+        <a href="archive-browser" class="product -small">
+          <div class="product-img">
+            <img src="img/archive-browser.png"
+                 srcset="img/archive-browser@2x.png 2x"
+                 alt="">
+          </div>
+          <div class="product-info">
+            <div class="product-title h4">The Archive Browser</div>
+            <div class="product-descr">
+              <p>The hugely popular unarchiving app for macOS.</p>
+            </div>
+          </div>
+        </a>
+        <a href="archives" class="product -small">
+          <div class="product-img">
+            <img src="img/archives.png"
+                 srcset="img/archives@2x.png 2x"
+                 alt="">
+          </div>
+          <div class="product-info">
+            <div class="product-title h4">Archives</div>
+            <div class="product-descr">
+              <p>Handle archives on the iPhone and iPad.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
 {% endblock %}
 
 {% block paddle %}
   <script src="https://cdn.paddle.com/paddle/paddle.js"></script>
   <script type="text/javascript">
     Paddle.Setup({
-      vendor: 126
+      vendor: 126,
+      eventCallback: function (event) {
+        var step;
+        switch (event.event) {
+          case 'Checkout.Login':
+            step = 1;
+            break;
+          case 'Checkout.CountryInformationEntered':
+            step = 2;
+            break;
+          case 'Checkout.PaymentMethodSelected':
+            step = 3;
+            break;
+          case 'Checkout.PaymentComplete':
+            step = 4;
+            break;
+          case 'Checkout.Complete':
+            step = 5;
+            break;
+        }
+        var obj = {
+          'event': 'macpaw-paddle',
+          'paddle-currency': event.eventData.checkout.prices.vendor.currency,
+          'paddle-referrer': event.checkoutData.parentURL,
+          'paddle-eventCategory': 'Checkout',
+          'paddle-eventAction': event.event,
+          'ecommerce': {
+            'actionField': {
+              'action': 'checkout',
+              'step': step
+            },
+            'checkout': {
+              'products': [{
+                'name': event.eventData.product.name,
+                'id': event.eventData.product.id,
+                'price': event.eventData.checkout.prices.vendor.total,
+                'quantity': event.eventData.product.quantity
+              }]
+            },
+            'currencyCode': event.eventData.checkout.prices.vendor.currency
+          }
+        };
+        if (event.event != 'Checkout.DuplicateWarningShown' && event.event != 'Checkout.Close' && event.event != 'Checkout.Loaded' && event.event != 'Checkout.Error') {
+          dataLayer.push(obj);
+        }
+        if (event.event == 'Checkout.Complete') {
+          dataLayer.push({
+            'event': 'macpaw-paddle-purchase',
+            'paddle-currency': event.eventData.checkout.prices.vendor.currency,
+            'paddle-referrer': event.checkoutData.parentURL,
+            'paddle-eventCategory': 'Checkout',
+            'paddle-eventAction': event.event,
+            'ecommerce': {
+              'purchase': {
+                'actionField': {
+                  'id': event.eventData.checkout.id,
+                  'revenue': event.eventData.checkout.prices.vendor.total
+                },
+                'products': [{
+                  'name': event.eventData.product.name,
+                  'id': event.eventData.product.id,
+                  'price': event.eventData.checkout.prices.vendor.total,
+                  'quantity': event.eventData.product.quantity
+                }]
+              }
+            }
+          });
+        }
+      }
     });
     [].slice.call(document.querySelectorAll('.js-paddle')).forEach(function(btn) {
       btn.addEventListener('click', function (e) {

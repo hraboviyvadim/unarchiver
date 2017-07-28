@@ -1,37 +1,374 @@
 ---
-title: Mac Archive Utilities| The Unarchiver, Archive Browser, Xee Image Viewer
-meta_descr: Unrar files on Mac, peek into the archive contents, view archives right from your iPhone. The Archive Utility Pack covers everything you need.
+url: https://theunarchiver.com
+title: The Unarchiver | Top Free Unarchiving Software for macOS
+meta_descr: Get the top application for archives on Mac. It’s a RAR extractor, it allows you to unzip files, and works with dozens of other formats.
+popular:
+  - item:
+    format: Zip
+    support: Full
+    info: Full support for the normal zip format, with additional support for AES encryption, Zip64 extensions for large files, Mac OS extensions of many different kinds, and several unusual compression methods. Can also extract .EXE self-extracting files using Zip.
+  - item:
+    format: Zipx
+    support: Full
+    info: Full support for the new compression modes introduced by WinZip.
+  - item:
+    format: RAR
+    support: Full
+    info: Including encryption and multiple volumes. Can also extract .EXE self-extracting files using RAR.
+  - item:
+    format: 7z
+    support: Full
+    info: All common compression methods are supported. Also supports Unix extensions.
+  - item:
+    format: Tar
+    support: Full
+  - item:
+    format: Gzip
+    support: Full
+  - item:
+    format: Bzip2
+    support: Full
+  - item:
+    format: LZMA, XZ
+    support: Full
+    info: Both the old "LZMA-alone" format, usually named .lzma, and the new .xz format.
+  - item:
+    format: CAB
+    support: Full
+  - item:
+    format: MSI
+    support: Full
+    info: This format is also used by many other Microsoft formats, meanings that you can use The Unarchiver to extract internal data from DOC and PPT files, and others. There is probably no reason to do this, but you can.
+  - item:
+    format: NSIS
+    support: Extensive
+    info: Supports many different versions, starting from version 1.1o
+  - item:
+    format: EXE
+    support: Some
+    info: Many kinds of .exe self-extracting formats are supported. However, if you find one that is not, please post an issue on the bug tracker.
+  - item:
+    format: ISO, BIN, MDF, NRG, CDI
+    support: Extensive
+    info: Most common disc images can be unpacked, both normal and raw.
+  - item:
+    format: Split files
+    support: Basic
+    info: Can join files named .001, .002 that do not use any extra wrapper format.
 
+old:
+  - item:
+    format: StuffIt
+    support: No encryption
+    info: Can unpack all files I've been able to locate.
+  - item:
+    format: StuffIt X
+    support: Partial
+    info: Can unpack many files, some more obscure features are still unsupported. JPEG compression is also unsupported.
+  - item:
+    format: DiskDoubler
+    support: Almost full
+    info: Only lacks some old compression methods, because I have not been able to locate any files using these. If you have some that do not work, please post them here.
+  - item:
+    format: Compact Pro
+    support: No encryption
+  - item:
+    format: PackIt
+    support: Full
+  - item:
+    format: Cpio
+    support: Full
+  - item:
+    format: Compress (.Z)
+    support: Full
+  - item:
+    format: ARJ
+    support: No multi-part
+  - item:
+    format: ARC, PAK
+    support: Full
+    info: Full support for all algorithms, including proprietary ones from PAK. Encryption only works in command-line utilities.
+  - item:
+    format: Ace
+    support: Only old files
+    info: No support for Ace 2.0 and up (WinAce).
+  - item:
+    format: Zoo
+    support: Full
+  - item:
+    format: LZH
+    support: Full
+  - item:
+    format: ADF
+    support: FFS
+    info: Can extract files from Amiga disk images using the regular FFS file system.
+  - item:
+    format: DMS
+    support: FFS
+    info: Can extract files from compressed Amiga disk images using the regular FFS file system.
+  - item:
+    format: LZX
+    support: Full
+  - item:
+    format: PowerPacker
+    support: Full
+  - item:
+    format: LBR
+    support: Full
+  - item:
+    format: Squeeze
+    support: Full
+  - item:
+    format: Crunch
+    support: Full
+unusual:
+  - item:
+    format: XAR
+    support: FFS
+    info: Suggested replacement for Tar on Unix. Used in some newer .pkg files on macOS.
+  - item:
+    format: RPM
+    support: Full
+    info: Linux package format.
+  - item:
+    format: Deb
+    support: Full
+    info: Linux package format.
+  - item:
+    format: Ar
+    support: Full
+    info: Unix library format.
+  - item:
+    format: ALZip
+    support: No encryption
+    info: Archive format which is mainly popular in South Korea. Support for all known compression methods, including Bzip2, Deflate and obfuscated Deflate.
+  - item:
+    format: WARC
+    support: Full
+    info: Internet Archive Web Archive. Request and response headers also included in metadata.
+  - item:
+    format: NSA, SAR
+    support: Partial
+    info: Game data file. Can unpack all files I've found. If you have ones that do not unpack, please post an issue.
+  - item:
+    format: NDS
+    support: Full
+    info: Nintendo DS ROM image, which can contain a file system.
+  - item:
+    format: SWF
+    support: Images and audio
+    info: Extracts images, sounds and music from Flash files.
+  - item:
+    format: PDF
+    support: Bitmap images
+    info: Extracts bitmap images from PDF files. Especially useful for scanned PDFs.
 ---
 
 {% extends "./layouts/_layout.njk" %}
 
+{% block banner %}
+  <div class="alert">
+    <div class="wrapper">
+      <div class="alert-body">
+        <div class="alert-left">
+          <div class="alert-row">
+            <div class="alert-col">{{ mixins.icon('macpaw') }}</div>
+            <div class="alert-col">+</div>
+            <div class="alert-col"><img src="img/unarchiver.png" alt=""></div>
+            <div class="alert-col">The Unarchiver is now part of MacPaw’s app portfolio. </div>
+          </div>
+        </div>
+        <div class="alert-right">
+          <a href="http://blog.macpaw.com/post/163484103673/macpaw-bought-unarchiver" class="btn -dark-green" target="_blank">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
 {% block content %}
   <section class="topper">
     <div class="wrapper">
-      <h1 class="h1">Mac Archive Utility Pack</h1>
-      <h4 class="subtitle">Top software for archive files on macOS and iOS</h4>
-    </div>
-  </section>
-  <section class="apps">
-    <div class="wrapper">
-      <div class="product -big">
+      <div class="product -big -prod">
         <div class="product-img">
-          <img src="img/unarchive.png"
-               srcset="img/unarchive@2x.png 2x"
+          <img src="img/unarchiver.png"
+               srcset="img/unarchiver@2x.png 2x"
                alt="">
         </div>
         <div class="product-info">
           <h2 class="product-title h2">The Unarchiver</h2>
+          <div class="product-subtitle">Open any archive in seconds</div>
           <div class="product-descr">
-            <p>The Unarchiver is the only app you need to unrar files on Mac. It’s times more powerful than the native macOS utility and supports infinitely more archive formats.
-              <a href="unarchiver">Read more</a>...</p>
+            <p>The Unarchiver is the only app you need to open RAR on Mac. It’s times more powerful than the native macOS utility and supports infinitely more archive formats.</p>
           </div>
-          <button class="btn">Download</button>
+          <a href="https://itunes.apple.com/us/app/the-unarchiver/id425424353?mt=12" class="appstore-link">
+            <img src="img/svg/Mac_App_Store_Badge.svg" alt="">
+          </a>
+          <a href="/downloads/TheUnarchiver.zip" class="btn">Download</a>
+          <div class="product-hint"><small>OS X 10.7 or later. For earlier versions <a href="/downloads/legacy/TheUnarchiver.zip">click here</a>.</small></div>
         </div>
       </div>
+      <div class="benefits row">
+        <div class="col-4 mob-col-12">
+          <div class="benefit">
+            <div class="benefit-icon"><img src="img/svg/install.svg" alt=""></div>
+            <div class="h4">Quick install</div>
+            <div class="benefit-text">Takes a few clicks to install and set it as a default app for all archive files.</div>
+          </div>
+        </div>
+        <div class="col-4 mob-col-12">
+          <div class="benefit">
+            <div class="benefit-icon"><img src="img/svg/star.svg" alt=""></div>
+            <div class="h4">Free and always will be</div>
+            <div class="benefit-text">The Unarchiver for Mac is free. No in-apps for additional features.</div>
+          </div>
+        </div>
+        <div class="col-4 mob-col-12">
+          <div class="benefit">
+            <div class="benefit-icon"><img src="img/svg/a.svg" alt=""></div>
+            <div class="h4">Reads foreign characters</div>
+            <div class="benefit-text">If your archive is named with non-Latin characters, it’s not a problem.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="white">
+    <div class="wrapper">
+      <div class="swiper-container js-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="img/unarchiver-screenshot-01.png" srcset="img/unarchiver-screenshot-01@2x.png 2x" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="img/unarchiver-screenshot-02.png"
+                 srcset="img/unarchiver-screenshot-02@2x.png 2x"
+                 alt="">
+          </div>
+        </div>
+        <button class="swiper-prev js-prev">{{ mixins.icon('prev') }}</button>
+        <button class="swiper-next js-next">{{ mixins.icon('next') }}</button>
+      </div>
+      <div class="formats js-show">
+        <h2 class="h2">Supported archive formats</h2>
+        <p>With The Unarchiver you can extract files from the following archive formats</p>
+        <div class="formats-box">
+          <div class="formats-wrap">
+            <div class="formats-col">
+              <div class="h4">Popular formats</div>
+              <table class="formats-table">
+                {% for item in popular %}
+                  <tr>
+                    <td><strong>{{ item.format }}</strong></td>
+                    <td>
+                      <div>
+                        <span>{{ item.support }}</span>
+                        {% if item.info %}
+                          <div class="hint">
+                            <button class="hint-btn">{{ mixins.icon('info') }}</button>
+                            <div class="hint-body">
+                              <p><strong>{{ item.format }}</strong></p>
+                              <p>{{ item.info }}</p>
+                            </div>
+                          </div>
+                        {% endif %}
+                      </div>
+                    </td>
+                  </tr>
+                {% endfor %}
+              </table>
+            </div>
+            <div class="formats-col">
+              <div class="h4">Old formats</div>
+              <table class="formats-table">
+                {% for item in old %}
+                  <tr>
+                    <td><strong>{{ item.format }}</strong></td>
+                    <td>
+                      <div>
+                        <span>{{ item.support }}</span>
+                        {% if item.info %}
+                          <div class="hint">
+                            <button class="hint-btn">{{ mixins.icon('info') }}</button>
+                            <div class="hint-body">
+                              <p><strong>{{ item.format }}</strong></p>
+                              <p>{{ item.info }}</p>
+                            </div>
+                          </div>
+                        {% endif %}
+                      </div>
+                    </td>
+                  </tr>
+                {% endfor %}
+              </table>
+              <div class="formats-text">Many other old formats, especially Amiga-specific ones, are also supported through libxad, but I have not made a full survey of which ones.</div>
+            </div>
+            <div class="formats-col">
+              <div class="h4">Unusual formats</div>
+              <table class="formats-table">
+                {% for item in unusual %}
+                  <tr>
+                    <td><strong>{{ item.format }}</strong></td>
+                    <td>
+                      <div>
+                        <span>{{ item.support }}</span>
+                        {% if item.info %}
+                          <div class="hint">
+                            <button class="hint-btn">{{ mixins.icon('info') }}</button>
+                            <div class="hint-body">
+                              <p><strong>{{ item.format }}</strong></p>
+                              <p>{{ item.info }}</p>
+                            </div>
+                          </div>
+                        {% endif %}
+                      </div>
+                    </td>
+                  </tr>
+                {% endfor %}
+              </table>
+            </div>
+          </div>
+          <div class="formats-footer">
+            <button class="btn -blue js-show-more">View All</button>
+          </div>
+        </div>
+      </div>
+      <div class="howto">
+        <h2 class="h2">How to use The Unarchiver</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="h2">1</div>
+            <div class="step-text">Choose any archive file</div>
+          </div>
+          <div class="step">
+            <div class="h2">2</div>
+            <div class="step-text">Go to File -> Get info menu</div>
+          </div>
+          <div class="step">
+            <div class="h2">3</div>
+            <div class="step-text">In the Open with choose The Unarchiver</div>
+          </div>
+          <div class="step">
+            <div class="h2">4</div>
+            <div class="step-text">Click Change all</div>
+          </div>
+        </div>
+        <div class="howto-footer">
+          <p>Now all the archive files you have will automatically open with The Unarchiver and you’ll forget the “Unknown format” alerts and extraction errors forever. Having a RAR extractor for Mac saves you tons of time when dealing with archives.</p>
+          <a href="https://itunes.apple.com/us/app/the-unarchiver/id425424353?mt=12" class="appstore-link">
+            <img src="img/svg/Mac_App_Store_Badge.svg" alt="">
+          </a>
+          <a href="/downloads/TheUnarchiver.zip" class="btn">Download</a>
+          <p><small>OS X 10.7 or later. For earlier versions <a href="/downloads/legacy/TheUnarchiver.zip">click here</a>.</small></p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="more">
+    <div class="wrapper">
+      <h2 class="h2">Other Apps:</h2>
       <div class="apps-row">
-        <div class="product">
+        <a href="archive-browser" class="product -small">
           <div class="product-img">
             <img src="img/archive-browser.png"
                  srcset="img/archive-browser@2x.png 2x"
@@ -40,12 +377,11 @@ meta_descr: Unrar files on Mac, peek into the archive contents, view archives ri
           <div class="product-info">
             <div class="product-title h4">The Archive Browser</div>
             <div class="product-descr">
-              <p>A simple and efficient archive viewer. With this archive utility, Mac has a tool to open archive contents and Preview the files without extracting them. You can also extract separate files when needed.</p>
+              <p>The hugely popular unarchiving app for macOS.</p>
             </div>
-            <a href="browser" class="btn -blue">View App</a>
           </div>
-        </div>
-        <div class="product">
+        </a>
+        <a href="archives" class="product -small">
           <div class="product-img">
             <img src="img/archives.png"
                  srcset="img/archives@2x.png 2x"
@@ -54,25 +390,23 @@ meta_descr: Unrar files on Mac, peek into the archive contents, view archives ri
           <div class="product-info">
             <div class="product-title h4">Archives</div>
             <div class="product-descr">
-              <p>With Archives, you can view archive contents on any iOS device, without your desktop computer. Unzip files on iPhone or iPad, see what’s inside, save or send them directly from the app.</p>
+              <p>Handle archives on the iPhone and iPad.</p>
             </div>
-            <a href="archives" class="btn -blue">View App</a>
           </div>
-        </div>
-        <div class="product">
+        </a>
+        <a href="xee" class="product -small">
           <div class="product-img">
             <img src="img/xee.png"
                  srcset="img/xee@2x.png 2x"
                  alt="">
           </div>
           <div class="product-info">
-            <div class="product-title h4">Xee <sup>3</sup>.app</div>
+            <div class="product-title h4">Xee <sup>3</sup></div>
             <div class="product-descr">
-              <p>Xee image viewer for Mac lets you easily work with images of all formats. It allows for a better file management, quick access, and a comfortable view of all your galleries.</p>
+              <p>Easily browse images in folders and archives on OS X.</p>
             </div>
-            <a href="xee" class="btn -blue">View App</a>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>

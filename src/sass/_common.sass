@@ -58,6 +58,12 @@ body
     background: $dark-green
   +r(360)
     width: 100%
+  &.-dark-green
+    background: rgba(#000C2D, .4)
+    &:hover
+      background: rgba(#000C2D, .3)
+    &:active
+      background: rgba(#000C2D, .5)
   &.-blue
     background: $blue
     &:hover
@@ -77,3 +83,5 @@ a.btn
   text-decoration: none
   &:hover
     text-decoration: none
+.btn + .btn, .btn + .get, .appstore-link + .btn
+  margin-left: 10px

@@ -1,11 +1,11 @@
-import { lory } from 'lory.js';
+import Swiper from 'swiper';
 
 document.addEventListener('DOMContentLoaded', () => {
   // slider
-  const slider = document.querySelector('.js_slider');
-  if (slider) {
-    lory(slider);
-  }
+  const swiper = new Swiper('.js-slider', {
+    nextButton: '.js-next',
+    prevButton: '.js-prev',
+  });
   // expanede block
   (() => {
     const block = document.querySelectorAll('.js-show');

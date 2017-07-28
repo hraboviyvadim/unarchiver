@@ -55,6 +55,6 @@
     "webpack": "^2.2.0"
   },
   "dependencies": {
-    "lory.js": "^2.2.1"
+    "swiper": "^3.4.2"
   }
 }

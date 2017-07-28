@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Unar and Lsar | Command Line Tools for The Unarchiver</title>
+    <link rel="canonical" href="https://theunarchiver.com/command-line">
+    <meta name=“google-site-verification” content=“2F_Ob_yOYzGey18bxqkdu1rr716Q3XQhNIHnmnQoUdE” />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="Get command line tools for unarchiving archives in the terminal on Mac, Windows, Linux, and Ubuntu.">
+    <link rel="shortcut icon" href="./img/the-unarchiver-96x96.png" sizes="16x16 24x24 32x32 48x48 64x64 96x96" />
+    <link rel="apple-touch-icon" href="./img/the-unarchiver-96x96.png" sizes="96x96" />
+    <link rel="apple-touch-icon" href="./img/the-unarchiver-144x144.png" sizes="144x144" />
+    <link rel="stylesheet" media="all" href="css/style.css">
+  </head>
+  <body>
+
+    <!-- BEGIN content -->
+    <div class="out">
+      <!-- header -->
+      <header class="header">
+        <div class="wrapper">
+          <nav class="nav">
+            <ul class="menu">
+              <li class="menu-item">
+                <a class="menu-link" href="/">Home</a>
+              </li>
+              <li class="menu-item">
+                <span class="menu-link">
+                  <a href="mac-archive-utility-pack">Products</a>
+                  <i class="arr-down"></i>
+                </span>
+                <div class="dropdown">
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-item">
+                      <a href="/" class="dropdown-link">
+                        <div class="dropdown-icon">
+                          <img src="img/unarchiver.png" alt="">
+                        </div>
+                        <div class="dropdown-title">The Unarchiver</div>
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a href="archive-browser" class="dropdown-link">
+                        <div class="dropdown-icon">
+                          <img src="img/archive-browser.png" alt="">
+                        </div>
+                        <div class="dropdown-title">The Archive Browser</div>
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a href="xee" class="dropdown-link">
+                        <div class="dropdown-icon">
+                          <img src="img/xee.png" alt="">
+                        </div>
+                        <div class="dropdown-title">Xee
+                          <sup>3</sup>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a href="archives" class="dropdown-link">
+                        <div class="dropdown-icon">
+                          <img src="img/archives.png" alt="">
+                        </div>
+                        <div class="dropdown-title">Archives</div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="menu-item">
+                <a class="menu-link" href="mailto:support@macpaw.com">Support</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <!-- page content -->
+      <section class="topper">
+        <div class="wrapper">
+          <div class="product -big -prod">
+            <div class="product-img">
+              <img src="img/command-line-tools.png" srcset="img/command-line-tools@2x.png 2x" alt="">
+            </div>
+            <div class="product-info">
+              <h2 class="product-title h2">Command line tools</h2>
+              <div class="product-descr">
+                <p>The Unarchiver is a macOS app, but the underlying unarchiving code can run on other OSes, too. There is not yet any GUI app for any other OS, but there are two command-line tools, unar and lsar, which can be used on macOS, Windows and
+                  Linux.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="white">
+        <div class="wrapper">
+          <div class="command">
+            <div class="command-block">
+              <h4 class="h4">macOS</h4>
+              <p>Pre-compiled versions for macOS are available on the Google Code download page, or here:</p>
+              <p>
+                <a href="https://theunarchiver.com/downloads/unarMac.zip">https://theunarchiver.com/downloads/unarMac.zip</a>
+              </p>
+              <p>For older macOS versions, use the legacy version:</p>
+              <p>
+                <a href="https://theunarchiver.com/downloads/legacy/unarMac.zip">https://theunarchiver.com/downloads/legacy/unarMac.zip</a>
+              </p>
+            </div>
+            <div class="command-block">
+              <h4 class="h4">Windows</h4>
+              <p>The Windows versions are currently cross-compiled with Cocotron on OS X. You find binary versions here:</p>
+              <p>
+                <a href="https://theunarchiver.com/downloads/unarWindows.zip">https://theunarchiver.com/downloads/unarWindows.zip</a>
+              </p>
+              <p>
+                <i>The Windows version is currently slightly outdated. An update will follow.</i>
+              </p>
+            </div>
+            <div class="command-block">
+              <h4 class="h4">Ubuntu</h4>
+              <p>Ubuntu 12.04 packages
+                <strong>unar</strong> and
+                <strong>lsar</strong>, under the package name "unar". You can install them from the Software Center, or using the command line:</p>
+              <p><code>sudo apt-get install unar</code></p>
+            </div>
+            <div class="command-block">
+              <h4 class="h4">Other Linuxes</h4>
+              <p>Some other distros also package unar, but since I do not use them, I am not sure how to install them. Debian probably handles it similarly to Ubuntu above, and I think Gentoo also has some way to install it. If anyone wants to supply me
+                with instructions for those, I will add them here.</p>
+              <p>You can also
+                <a href="https://theunarchiver.com/downloads/TheUnarchiverSource.zip">download the source code</a> and compile the tools by hand. To do this, you will need to find and install the required third-party libraries that the XADMaster library depends on (GNUstep, zlib, libbzip2, OpenSSL, and ICU). How to do that
+                depends on which distribution you are using. On Ubuntu, the following should work:</p>
+              <p><code>sudo apt-get install build-essential libgnustep-base-dev libz-dev libbz2-dev libssl-dev libicu-dev</code></p>
+              <p><code>cd XADMaster</code></p>
+              <p><code>make -f Makefile.linux</code></p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="more">
+        <div class="wrapper">
+          <h2 class="h2">Other Apps:</h2>
+          <div class="apps-row">
+            <a href="/" class="product -small">
+              <div class="product-img">
+                <img src="img/unarchiver.png" srcset="img/unarchiver@2x.png 2x" alt="">
+              </div>
+              <div class="product-info">
+                <div class="product-title h4">The Unarchiver</div>
+                <div class="product-descr">
+                  <p>Open any archive in seconds</p>
+                </div>
+              </div>
+            </a>
+            <a href="archive-browser" class="product -small">
+              <div class="product-img">
+                <img src="img/archive-browser.png" srcset="img/archive-browser@2x.png 2x" alt="">
+              </div>
+              <div class="product-info">
+                <div class="product-title h4">The Archive Browser</div>
+                <div class="product-descr">
+                  <p>The hugely popular unarchiving app for macOS.</p>
+                </div>
+              </div>
+            </a>
+            <a href="archives" class="product -small">
+              <div class="product-img">
+                <img src="img/archives.png" srcset="img/archives@2x.png 2x" alt="">
+              </div>
+              <div class="product-info">
+                <div class="product-title h4">Archives</div>
+                <div class="product-descr">
+                  <p>Handle archives on the iPhone and iPad.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- END content -->
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="wrapper">
+        <p>Copyright © 2017
+          <a href="https://macpaw.com/">MacPaw Inc.</a>
+        </p>
+      </div>
+    </footer>
+    <!-- BEGIN scripts -->
+    <script type="text/javascript" src="js/app.js"></script>
+    <!-- END scripts -->
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w, d, s, l, i)
+      {
+        w[l] = w[l] || [];
+        w[l].push(
+        {
+          'gtm.start': new Date().getTime(),
+          event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-N44QVXM');
+
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N44QVXM" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+  </body>
+</html>
