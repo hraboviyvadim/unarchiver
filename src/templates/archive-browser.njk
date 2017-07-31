@@ -120,45 +120,66 @@ meta_descr: Get the top application for viewing files in archives on Mac. Quick 
     <div class="wrapper">
       <h2 class="h2">Other Apps:</h2>
       <div class="apps-row">
-        <a href="/" class="product -small">
-          <div class="product-img">
-            <img src="img/unarchiver.png"
-                 srcset="img/unarchiver@2x.png 2x"
-                 alt="">
-          </div>
-          <div class="product-info">
-            <div class="product-title h4">The Unarchiver</div>
-            <div class="product-descr">
-              <p>Open any archive in seconds</p>
+        <div class="apps-col">
+          <a href="/" class="product -small">
+            <div class="product-img">
+              <img src="img/unarchiver.png"
+                   srcset="img/unarchiver@2x.png 2x"
+                   alt="">
             </div>
-          </div>
-        </a>
-        <a href="archives" class="product -small">
-          <div class="product-img">
-            <img src="img/archives.png"
-                 srcset="img/archives@2x.png 2x"
-                 alt="">
-          </div>
-          <div class="product-info">
-            <div class="product-title h4">Archives</div>
-            <div class="product-descr">
-              <p>Handle archives on the iPhone and iPad.</p>
+            <div class="product-info">
+              <div class="product-title h4">The Unarchiver</div>
+              <div class="product-descr">
+                <p>Open any archive in seconds</p>
+              </div>
             </div>
-          </div>
-        </a>
-        <a href="xee" class="product -small">
-          <div class="product-img">
-            <img src="img/xee.png"
-                 srcset="img/xee@2x.png 2x"
-                 alt="">
-          </div>
-          <div class="product-info">
-            <div class="product-title h4">Xee <sup>3</sup></div>
-            <div class="product-descr">
-              <p>Easily browse images in folders and archives on macOS.</p>
+          </a>
+        </div>
+        <div class="apps-col">
+          <a href="archives" class="product -small">
+            <div class="product-img">
+              <img src="img/archives.png"
+                   srcset="img/archives@2x.png 2x"
+                   alt="">
             </div>
-          </div>
-        </a>
+            <div class="product-info">
+              <div class="product-title h4">Archives</div>
+              <div class="product-descr">
+                <p>Handle archives on the iPhone and iPad.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="apps-col">
+          <a href="xee" class="product -small">
+            <div class="product-img">
+              <img src="img/xee.png"
+                   srcset="img/xee@2x.png 2x"
+                   alt="">
+            </div>
+            <div class="product-info">
+              <div class="product-title h4">Xee <sup>3</sup></div>
+              <div class="product-descr">
+                <p>Easily browse images in folders and archives on macOS.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="apps-col">
+          <a href="command-line" class="product -small">
+            <div class="product-img">
+              <img src="img/command-line-tools.png"
+                   srcset="img/command-line-tools-icon@2x.png 2x"
+                   alt="">
+            </div>
+            <div class="product-info">
+              <div class="product-title h4">Command Line Tool</div>
+              <div class="product-descr">
+                <p>Use Unarchiver’s code on other OSes with command line.</p>
+              </div>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -241,7 +262,7 @@ meta_descr: Get the top application for viewing files in archives on Mac. Quick 
           dataLayer.push(obj);
         }
         if (event.event == 'Checkout.Complete') {
-          if (helpers.getCookie('cookieOrderId') != event.eventData.checkout.id) {
+//          if (helpers.getCookie('cookieOrderId') != event.eventData.checkout.id) {
             dataLayer.push({
               'event': 'macpaw-paddle-purchase',
               'paddle-currency': event.eventData.checkout.prices.vendor.currency,
@@ -263,8 +284,8 @@ meta_descr: Get the top application for viewing files in archives on Mac. Quick 
                 }
               }
             });
-          }
-          helpers.setCookie('cookieOrderId', event.eventData.checkout.id);
+//          }
+//          helpers.setCookie('cookieOrderId', event.eventData.checkout.id);
         }
       }
     });

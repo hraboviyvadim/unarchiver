@@ -2,17 +2,16 @@
 .topper
   margin-bottom: 82px
 .apps-row
-  display: flex
-  align-items: stretch
-  justify-content: space-between
+  +clr
   +r(768)
     flex-direction: column
 .product
   position: relative
-  width: 31%
-  padding: 30px 30px 100px
-  font-size: 0
+  display: block
+  +clr
+  padding: 30px
   border-radius: 8px
+  margin-bottom: 30px
   background: #fff
   +r(1024)
     padding: 20px 20px 90px
@@ -31,31 +30,23 @@
     left: 50%
     transform: translateX(-50%)
   .product-img
-    min-height: 126px
-    margin-bottom: 28px
-    text-align: center
+    float: left
+    width: 180px
+    padding-right: 40px
     img
       transition: transform 300ms
-      max-width: 120px
+      width: 140px
+      max-width: 100%
     +r(768)
-      display: inline-block
-      vertical-align: middle
-      width: 45%
-      img
-        width: 200px
-        max-width: 100%
+      margin-bottom: 28px
     +r(600)
       display: block
       width: 100%
+      text-align: center
   .product-info
-    text-align: center
+    overflow: hidden
+    text-align: left
     font-size: 18px
-    +r(768)
-      display: inline-block
-      vertical-align: middle
-      width: 55%
-      padding-left: 5%
-      text-align: left
     +r(600)
       display: block
       width: 100%
@@ -64,8 +55,7 @@
   .product-title
     margin-bottom: 11px
     transition: color 300ms
-    +r(768)
-      text-align: left
+    text-align: left
     +r(600)
       text-align: center
   .product-subtitle
@@ -76,7 +66,7 @@
   .product-descr
     margin-bottom: 20px
     font-size: $default
-    +r(768)
+    +r(600)
       font-size: $default_mobile
   &.-prod
     background: none
@@ -92,6 +82,9 @@
     padding: 40px
     width: 100%
     margin-bottom: 30px
+    font-size: 0
+    &:after
+      display: none
     .btn
       position: relative
       left: auto
@@ -105,6 +98,7 @@
     .product-img, .product-info
       display: inline-block
       vertical-align: middle
+      float: none
       width: 50%
       +r(600)
         display: block
@@ -157,6 +151,8 @@ a.product
     .get-dropdown
       opacity: 1
       visibility: visible
+  +r(480)
+    display: block
   .btn
     margin: 0!important
   .get-dropdown
@@ -169,6 +165,10 @@ a.product
     transition: opacity 300ms
     opacity: 0
     visibility: hidden
+    +r(600)
+      left: auto
+      right: 0
+      transform: none
   .get-list
     position: relative
     padding: 15px 0

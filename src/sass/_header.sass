@@ -32,7 +32,7 @@
   position: absolute
   top: 48px
   left: 50%
-  width: 280px
+  width: 400px
   transform: translateX(-50%)
   padding: 18px
   border-radius: 12px
@@ -45,15 +45,22 @@
     content: ""
     position: absolute
     top: -5px
-    right: 105px
+    right: 165px
     +arr(10, 5, rgba(#000624, .95), t)
+  +r(480)
+    width: 280px
+    &:before
+      right: 105px
   .dropdown-menu
     font-size: 0
+    text-align: left
   .dropdown-item
     display: inline-block
     vertical-align: top
-    width: 50%
+    width: 33.3%
     text-align: center
+    +r(480)
+      width: 50%
   .dropdown-link
     display: block
     height: 142px

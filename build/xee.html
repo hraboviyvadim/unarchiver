@@ -48,6 +48,14 @@
                       </a>
                     </li>
                     <li class="dropdown-item">
+                      <a href="archives" class="dropdown-link">
+                        <div class="dropdown-icon">
+                          <img src="img/archives.png" alt="">
+                        </div>
+                        <div class="dropdown-title">Archives</div>
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
                       <a href="xee" class="dropdown-link">
                         <div class="dropdown-icon">
                           <img src="img/xee.png" alt="">
@@ -58,11 +66,11 @@
                       </a>
                     </li>
                     <li class="dropdown-item">
-                      <a href="archives" class="dropdown-link">
+                      <a href="command-line" class="dropdown-link">
                         <div class="dropdown-icon">
-                          <img src="img/archives.png" alt="">
+                          <img src="img/command-line-tools.png" alt="">
                         </div>
-                        <div class="dropdown-title">Archives</div>
+                        <div class="dropdown-title">Command Line Tool</div>
                       </a>
                     </li>
                   </ul>
@@ -212,39 +220,58 @@
         <div class="wrapper">
           <h2 class="h2">Other Apps:</h2>
           <div class="apps-row">
-            <a href="/" class="product -small">
-              <div class="product-img">
-                <img src="img/unarchiver.png" srcset="img/unarchiver@2x.png 2x" alt="">
-              </div>
-              <div class="product-info">
-                <div class="product-title h4">The Unarchiver</div>
-                <div class="product-descr">
-                  <p>Open any archive in seconds</p>
+            <div class="apps-col">
+              <a href="/" class="product -small">
+                <div class="product-img">
+                  <img src="img/unarchiver.png" srcset="img/unarchiver@2x.png 2x" alt="">
                 </div>
-              </div>
-            </a>
-            <a href="archive-browser" class="product -small">
-              <div class="product-img">
-                <img src="img/archive-browser.png" srcset="img/archive-browser@2x.png 2x" alt="">
-              </div>
-              <div class="product-info">
-                <div class="product-title h4">The Archive Browser</div>
-                <div class="product-descr">
-                  <p>The hugely popular unarchiving app for macOS.</p>
+                <div class="product-info">
+                  <div class="product-title h4">The Unarchiver</div>
+                  <div class="product-descr">
+                    <p>Open any archive in seconds</p>
+                  </div>
                 </div>
-              </div>
-            </a>
-            <a href="archives" class="product -small">
-              <div class="product-img">
-                <img src="img/archives.png" srcset="img/archives@2x.png 2x" alt="">
-              </div>
-              <div class="product-info">
-                <div class="product-title h4">Archives</div>
-                <div class="product-descr">
-                  <p>Handle archives on the iPhone and iPad.</p>
+              </a>
+            </div>
+            <div class="apps-col">
+              <a href="archive-browser" class="product -small">
+                <div class="product-img">
+                  <img src="img/archive-browser.png" srcset="img/archive-browser@2x.png 2x" alt="">
                 </div>
-              </div>
-            </a>
+                <div class="product-info">
+                  <div class="product-title h4">The Archive Browser</div>
+                  <div class="product-descr">
+                    <p>The hugely popular unarchiving app for macOS.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="apps-col">
+              <a href="archives" class="product -small">
+                <div class="product-img">
+                  <img src="img/archives.png" srcset="img/archives@2x.png 2x" alt="">
+                </div>
+                <div class="product-info">
+                  <div class="product-title h4">Archives</div>
+                  <div class="product-descr">
+                    <p>Handle archives on the iPhone and iPad.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="apps-col">
+              <a href="command-line" class="product -small">
+                <div class="product-img">
+                  <img src="img/command-line-tools.png" srcset="img/command-line-tools-icon@2x.png 2x" alt="">
+                </div>
+                <div class="product-info">
+                  <div class="product-title h4">Command Line Tool</div>
+                  <div class="product-descr">
+                    <p>Use Unarchiver’s code on other OSes with command line.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -354,36 +381,35 @@
           }
           if (event.event == 'Checkout.Complete')
           {
-            if (helpers.getCookie('cookieOrderId') != event.eventData.checkout.id)
+            //          if (helpers.getCookie('cookieOrderId') != event.eventData.checkout.id) {
+            dataLayer.push(
             {
-              dataLayer.push(
+              'event': 'macpaw-paddle-purchase',
+              'paddle-currency': event.eventData.checkout.prices.vendor.currency,
+              'paddle-referrer': event.checkoutData.parentURL,
+              'paddle-eventCategory': 'Checkout',
+              'paddle-eventAction': event.event,
+              'ecommerce':
               {
-                'event': 'macpaw-paddle-purchase',
-                'paddle-currency': event.eventData.checkout.prices.vendor.currency,
-                'paddle-referrer': event.checkoutData.parentURL,
-                'paddle-eventCategory': 'Checkout',
-                'paddle-eventAction': event.event,
-                'ecommerce':
+                'purchase':
                 {
-                  'purchase':
+                  'actionField':
                   {
-                    'actionField':
-                    {
-                      'id': event.eventData.checkout.id,
-                      'revenue': event.eventData.checkout.prices.vendor.total
-                    },
-                    'products': [
-                    {
-                      'name': event.eventData.product.name,
-                      'id': event.eventData.product.id,
-                      'price': event.eventData.checkout.prices.vendor.total,
-                      'quantity': event.eventData.product.quantity
-                    }]
-                  }
+                    'id': event.eventData.checkout.id,
+                    'revenue': event.eventData.checkout.prices.vendor.total
+                  },
+                  'products': [
+                  {
+                    'name': event.eventData.product.name,
+                    'id': event.eventData.product.id,
+                    'price': event.eventData.checkout.prices.vendor.total,
+                    'quantity': event.eventData.product.quantity
+                  }]
                 }
-              });
-            }
-            helpers.setCookie('cookieOrderId', event.eventData.checkout.id);
+              }
+            });
+            //          }
+            //          helpers.setCookie('cookieOrderId', event.eventData.checkout.id);
           }
         }
       });
