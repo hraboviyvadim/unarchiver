@@ -44,7 +44,7 @@
       width: 100%
       text-align: center
   .product-info
-    overflow: hidden
+    //overflow: hidden
     text-align: left
     font-size: 18px
     +r(600)
@@ -76,6 +76,7 @@
         display: block
         width: 100%
         text-align: center
+        padding: 0
       .product-title
         text-align: center
   &.-big
@@ -169,6 +170,10 @@ a.product
       left: auto
       right: 0
       transform: none
+    +r(480)
+      left: 50%
+      right: auto
+      transform: translateX(-50%)
   .get-list
     position: relative
     padding: 15px 0
@@ -181,6 +186,10 @@ a.product
       top: -5px
       right: 105px
       +arr(10, 5, rgba(#000624, .95), t)
+    +r(480)
+      &:before
+        right: 50%
+        transform: translateX(50%)
     li
       a, button
         display: inline-block

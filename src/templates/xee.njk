@@ -197,9 +197,11 @@ meta_descr: Xee lets you easily browse and manage images on your Mac. Browse ima
       this.setCookie(name, '', -1);
     }
     var helpers = new Helpers();
+    var isAndroid = /(android)/i.test(navigator.userAgent);
     Paddle.Setup({
       vendor: 126,
       eventCallback: function (event) {
+        var coupon = '';
         var step;
         switch (event.event) {
           case 'Checkout.Login':
@@ -243,8 +245,13 @@ meta_descr: Xee lets you easily browse and manage images on your Mac. Browse ima
         if (event.event != 'Checkout.DuplicateWarningShown' && event.event != 'Checkout.Close' && event.event != 'Checkout.Loaded' && event.event != 'Checkout.Error') {
           dataLayer.push(obj);
         }
+        if (event.event == 'Checkout.Close' && isAndroid) {
+          var viewport = document.querySelector("meta[name=viewport]");
+          viewport.setAttribute('content', 'width=device-width, initial-scale=0.32');
+        }
         if (event.event == 'Checkout.Complete') {
-//          if (helpers.getCookie('cookieOrderId') != event.eventData.checkout.id) {
+          if (event.eventData.checkout.coupon) coupon = event.eventData.checkout.coupon.coupon_code;
+          if (helpers.getCookie('cookieOrderId') != event.eventData.checkout.id) {
             dataLayer.push({
               'event': 'macpaw-paddle-purchase',
               'paddle-currency': event.eventData.checkout.prices.vendor.currency,
@@ -255,19 +262,21 @@ meta_descr: Xee lets you easily browse and manage images on your Mac. Browse ima
                 'purchase': {
                   'actionField': {
                     'id': event.eventData.checkout.id,
-                    'revenue': event.eventData.checkout.prices.vendor.total
+                    'revenue': event.eventData.checkout.prices.vendor.total,
+                    'coupon': coupon
                   },
                   'products': [{
                     'name': event.eventData.product.name,
                     'id': event.eventData.product.id,
                     'price': event.eventData.checkout.prices.vendor.total,
-                    'quantity': event.eventData.product.quantity
+                    'quantity': event.eventData.product.quantity,
+                    'coupon': coupon
                   }]
                 }
               }
             });
-//          }
-//          helpers.setCookie('cookieOrderId', event.eventData.checkout.id);
+          }
+          helpers.setCookie('cookieOrderId', event.eventData.checkout.id);
         }
       }
     });
