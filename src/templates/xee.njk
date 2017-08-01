@@ -197,7 +197,6 @@ meta_descr: Xee lets you easily browse and manage images on your Mac. Browse ima
       this.setCookie(name, '', -1);
     }
     var helpers = new Helpers();
-    var isAndroid = /(android)/i.test(navigator.userAgent);
     Paddle.Setup({
       vendor: 126,
       eventCallback: function (event) {
@@ -244,10 +243,6 @@ meta_descr: Xee lets you easily browse and manage images on your Mac. Browse ima
         };
         if (event.event != 'Checkout.DuplicateWarningShown' && event.event != 'Checkout.Close' && event.event != 'Checkout.Loaded' && event.event != 'Checkout.Error') {
           dataLayer.push(obj);
-        }
-        if (event.event == 'Checkout.Close' && isAndroid) {
-          var viewport = document.querySelector("meta[name=viewport]");
-          viewport.setAttribute('content', 'width=device-width, initial-scale=0.32');
         }
         if (event.event == 'Checkout.Complete') {
           if (event.eventData.checkout.coupon) coupon = event.eventData.checkout.coupon.coupon_code;
