@@ -7,8 +7,8 @@
     flex-direction: column
 .product
   position: relative
-  display: block
-  +clr
+  display: table
+  width: 100%
   padding: 30px
   border-radius: 8px
   margin-bottom: 30px
@@ -19,18 +19,22 @@
     width: 100%
     padding: 20px
     margin-bottom: 30px
+
     .btn
       position: relative
       bottom: auto
       left: auto
       transform: none
+  +r(600)
+    display: block
   .btn
     position: absolute
     bottom: 30px
     left: 50%
     transform: translateX(-50%)
   .product-img
-    float: left
+    display: table-cell
+    vertical-align: top
     width: 180px
     padding-right: 40px
     img
@@ -43,7 +47,10 @@
       display: block
       width: 100%
       text-align: center
+      padding-right: 0
   .product-info
+    display: table-cell
+    vertical-align: top
     //overflow: hidden
     text-align: left
     font-size: 18px
