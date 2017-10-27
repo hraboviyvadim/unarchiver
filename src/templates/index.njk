@@ -204,7 +204,7 @@ unusual:
           <a href="https://itunes.apple.com/us/app/the-unarchiver/id425424353?mt=12" class="appstore-link">
             <img src="img/svg/Mac_App_Store_Badge.svg" alt="">
           </a>
-          <a href="/downloads/TheUnarchiver.zip" class="btn">Download</a>
+          <a onclick="goog_report_conversion();" href="https://dl.devmate.com/cx.c3.theunarchiver/TheUnarchiver.zip" class="btn">Download</a>
           <div class="product-hint"><small>macOS 10.7 or later. For earlier versions <a
                 href="/downloads/legacy/TheUnarchiver.zip">click here</a>.</small></div>
         </div>
@@ -359,7 +359,7 @@ unusual:
           <a href="https://itunes.apple.com/us/app/the-unarchiver/id425424353?mt=12" class="appstore-link">
             <img src="img/svg/Mac_App_Store_Badge.svg" alt="">
           </a>
-          <a href="/downloads/TheUnarchiver.zip" class="btn">Download</a>
+          <a onclick="goog_report_conversion();" href="https://dl.devmate.com/cx.c3.theunarchiver/TheUnarchiver.zip" class="btn">Download</a>
           <p><small>macOS 10.7 or later. For earlier versions <a href="/downloads/legacy/TheUnarchiver.zip">click
                 here</a>.</small></p>
         </div>
@@ -433,4 +433,39 @@ unusual:
       </div>
     </div>
   </section>
+{% endblock %}
+
+{% block google_adw %}
+  <!-- Google Code for Unarchiver Download Conversion Page
+In your html page, add the snippet and call
+goog_report_conversion when someone clicks on the
+chosen link or button. -->
+  <script type="text/javascript">
+    /* <![CDATA[ */
+    goog_snippet_vars = function() {
+      var w = window;
+      w.google_conversion_id = 829338609;
+      w.google_conversion_label = "c9zPCOzi_XcQ8ee6iwM";
+      w.google_remarketing_only = false;
+    }
+    // DO NOT CHANGE THE CODE BELOW.
+    goog_report_conversion = function(url) {
+      goog_snippet_vars();
+      window.google_conversion_format = "3";
+      var opt = new Object();
+      opt.onload_callback = function() {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      }
+      var conv_handler = window['google_trackConversion'];
+      if (typeof(conv_handler) == 'function') {
+        conv_handler(opt);
+      }
+    }
+    /* ]]> */
+  </script>
+  <script type="text/javascript"
+          src="//www.googleadservices.com/pagead/conversion_async.js">
+  </script>
 {% endblock %}
