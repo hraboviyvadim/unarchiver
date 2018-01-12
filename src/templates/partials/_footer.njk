@@ -1,5 +1,8 @@
 <footer class="footer">
     <div class="wrapper">
-      <p>Copyright © 2017 <a href="https://macpaw.com/">MacPaw Inc.</a></p>
+      <p>Copyright © <span id="year"></span> <a href="https://macpaw.com/">MacPaw Inc.</a></p>
+      <script>
+        document.getElementById('year').innerText = new Date().getFullYear();
+      </script>
     </div>
 </footer>
